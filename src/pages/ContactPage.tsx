@@ -71,7 +71,7 @@ function ContactPage() {
   };
 
   const contactDetails = [
-    { label: 'Phone', value: '+234 703 3020 608', href: 'tel:+2347033020608' },
+    { label: 'Phone', value: '+234 703 3020 609', href: 'tel:+2347033020608' },
     { label: 'Email', value: 'info@aynadatasolutions.com', href: 'mailto:info@aynadatasolutions.com' },
     // { label: 'Office', value: '14B, Kafayat Abdulrasaq Street, Lekki Phase 1' },
   ];
