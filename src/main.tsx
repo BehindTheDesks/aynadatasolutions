@@ -13,12 +13,19 @@ import AboutPage from "./pages/AboutPage.tsx";
 import ServicesPage from "./pages/ServicesPage.tsx";
 import { isProduction } from "./hooks/helper.ts";
 import NotFound from "./components/NotFound.tsx";
+import ComingSoonPage from "./pages/ComingSoonPage.tsx";
 
 const productionRoutes: RouteObject[] = [
-  {
+      {
     path: "",
+    element: <ComingSoonPage />,
+  },
+  {
+    path: "contact",
     element: <ContactPage />,
   },
+
+  
 ];
 
 const devRoutes: RouteObject[] = [
@@ -38,6 +45,8 @@ const devRoutes: RouteObject[] = [
     path: "services",
     element: <ServicesPage />,
   },
+
+
 ];
 
 const subroutes = isProduction() ? productionRoutes : devRoutes;
