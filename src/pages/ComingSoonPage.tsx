@@ -23,11 +23,11 @@ const ComingSoonPage = () => {
         </div>
       </div>
 
-       <FollowCursorCircle
+       {/* <FollowCursorCircle
           color="bg-data-dark-bg" // Use a color from your Tailwind config
           opacity={1}
           springConfig={{ stiffness: 300, damping: 25, mass: 0.7 }}
-        />
+        /> */}
     </section>
   );
 };
