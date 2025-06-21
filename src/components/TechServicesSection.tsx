@@ -1,30 +1,31 @@
 // src/components/TechServicesSection.tsx
 import React from "react";
 import { motion } from "framer-motion";
-import TechServiceCard, { type TechService } from "./TechServiceCard";
 import { AnimatedWrapper } from "./AnimatedWrapper";
 import { fadeInUp, staggerContainer } from "./animations/variants";
 
 // Example Icons from react-icons/fi (Feather Icons) - replace with your choices
-import {
-  
-  FiShield,
-
-} from "react-icons/fi";
+import { FiShield } from "react-icons/fi";
 import GridPattern from "./GridPattern";
 import AnimatedHighlightedWord from "./AnimatedHighlightedWord";
 import { FaChess, FaRegMoneyBillAlt } from "react-icons/fa";
 import { GiArtificialIntelligence, GiStumpRegrowth } from "react-icons/gi";
 import { LiaLightbulb } from "react-icons/lia";
+import Chip from "./Chip";
+import ServiceCard, { type Service } from "./ServiceCard";
+import Button from "./Button";
+import { useNavigate } from "react-router-dom";
+
+const size = 40
 
 // --- Example Service Data ---
-const techServicesData: TechService[] = [
+const techServicesData: Service[] = [
   {
     id: "policy",
-    title: "Data Governance & Policy Advisory",
+    title: "Data governance, privacy, and quality",
     description:
       "Craft robust frameworks for data management, ensuring compliance, interoperability, and trust across institutions.",
-    IconComponent: <FiShield size={70} className="text-blue-500" />,
+    IconComponent: <FiShield size={size} className="text-blue-500" />,
     bgColor: "bg-blue-200/10",
     // visualElement: <CustomPrivacyVisual />, // If you have a more complex visual
     spanCols: 1, // Example: this card takes 1 column
@@ -32,21 +33,21 @@ const techServicesData: TechService[] = [
   },
   {
     id: "monetization",
-    title: "Data Monetization",
+    title: "Data monetization frameworks",
     description:
       "Unlock revenue through licensing, marketplaces, and efficiency-driven models tailored for public and private sectors.",
     bgColor: "bg-brand-green/10",
-    IconComponent: <FaRegMoneyBillAlt size={70} className="text-brand-green" />,
+    IconComponent: <FaRegMoneyBillAlt size={size} className="text-brand-green" />,
     className: "hover:shadow-brand-green/50 hover:border-white/20",
     spanCols: 1,
   },
   {
     id: "ai",
-    title: "Advanced Analytics & AI",
+    title: "Advanced analytics and AI deployment",
     description:
       "Leverage predictive modeling, machine learning, and enterprise AI to drive smarter decisions and automation.",
     IconComponent: (
-      <GiArtificialIntelligence size={70} className="text-purple-300" />
+      <GiArtificialIntelligence size={size} className="text-purple-300" />
     ),
     bgColor: "bg-purple-300/10",
     className: "hover:shadow-purple-300/50 hover:border-white/20",
@@ -55,10 +56,10 @@ const techServicesData: TechService[] = [
   },
   {
     id: "capacity",
-    title: "Capacity Development",
+    title: "Capacity building and AI training",
     description:
       "Empower your team with AI literacy, data stewardship certifications, and tailored digital transformation training.",
-    IconComponent: <GiStumpRegrowth size={70} className="text-red-500" />,
+    IconComponent: <GiStumpRegrowth size={size} className="text-red-500" />,
     bgColor: "bg-purple-500/10",
     className: "hover:shadow-red-300/50 hover:border-white/20",
 
@@ -83,23 +84,23 @@ const techServicesData: TechService[] = [
   },
   {
     id: "talent",
-    title: "Talent Sourcing",
+    title: "Tech talent sourcing and placement",
     description:
       "Access vetted tech professionals and build workforce readiness for your digital transformation journey.",
-    IconComponent: <LiaLightbulb  size={70} className="text-brand-yellow" />, 
-        bgColor: "bg-brand-yellow/10",
+    IconComponent: <LiaLightbulb size={size} className="text-brand-yellow" />,
+    bgColor: "bg-brand-yellow/10",
     className: "hover:shadow-brand-yellow/50 hover:border-white/20",
 
     spanCols: 1, // This card will span two columns on large screens
   },
 
-    {
+  {
     id: "strategy",
-    title: "Strategy Consulting",
+    title: "Strategy consulting",
     description:
       "Align vision, innovate business models, and execute with precision through ecosystem mapping and stakeholder engagement.",
-    IconComponent: <FaChess  size={70} className="text-white" />, 
-        bgColor: "bg-white/10",
+    IconComponent: <FaChess size={size} className="text-white" />,
+    bgColor: "bg-white/10",
     className: "hover:shadow-white/50 hover:border-white/20",
 
     spanCols: 1, // This card will span two columns on large screens
@@ -109,11 +110,26 @@ const techServicesData: TechService[] = [
 const staticTextPartVariant = fadeInUp(0.7);
 
 function TechServicesSection() {
+
+  const navigate = useNavigate()
+
   return (
     <section id="tech-services" className="relative py-20 md:py-28 bg-tech-bg">
       <GridPattern />
 
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="container flex flex-col justify-center z-10 relative items-center mx-auto px-4 sm:px-6 lg:px-8">
+        <AnimatedWrapper
+          variants={fadeInUp(0.6)}
+          className="text-center mb-8 md:mb-8"
+        >
+          <Chip
+            textSize="xl"
+            bgColor="bg-yellow-300/40"
+            textColor="text-brand-yellow"
+            border={false}
+            label="✨What We Do"
+          />
+        </AnimatedWrapper>
         <AnimatedWrapper
           variants={fadeInUp(0.6)}
           className="text-center mb-16 md:mb-20"
@@ -124,40 +140,53 @@ function TechServicesSection() {
           >
             {/* Compose the headline */}
             <AnimatedHighlightedWord
-              word="Discover"
-              highlightColorClass="bg-purple-200/40" // Example different highlight
-              textColorClass="text-purple-300"
+              word="End-to-End"
+              highlightColorClass="bg-yellow-300/40" // Example different highlight
+              textColorClass="text-brand-yellow"
               className="mx-1"
             />
             <motion.span variants={staticTextPartVariant}>
               {" "}
-              What We{" "}
+              Data Strategy.{" "}
             </motion.span>
             <br />
-            <motion.span variants={staticTextPartVariant}>Do At </motion.span>
+            <motion.span variants={staticTextPartVariant}>
+              Built for{" "}
+            </motion.span>
 
             <AnimatedHighlightedWord
-              word="AYNA"
+              word="Impact"
               highlightColorClass="bg-yellow-300/40" // Example different highlight
-              textColorClass="text-data-accent"
+              textColorClass="text-brand-yellow"
               className="mx-1"
             />
           </motion.h1>
           <p className="text-lg sm:text-xl text-data-text-muted max-w-3xl mx-auto mt-4 leading-relaxed">
-            Our six interconnected pillars deliver end-to-end <br className="hidden lg:inline-block "/> solutions
-            to transform your organization.
+            We work with forward-looking leaders to transform data from a cost
+            centre into a competitive advantage. Our services include.
           </p>
         </AnimatedWrapper>
 
         {/* Use a more flexible grid that allows for spanning */}
         <AnimatedWrapper
           variants={staggerContainer(0.15, 0.2)}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8" // Base grid
+          className="grid grid-cols-1 md:grid-cols-2  gap-6 md:gap-8" // Base grid
         >
           {techServicesData.map((service) => (
-            <TechServiceCard key={service.id} service={service} />
+            <ServiceCard key={service.id} service={service} />
           ))}
         </AnimatedWrapper>
+
+     <AnimatedWrapper
+              className="w-full flex justify-center items-center py-10"
+              variants={staggerContainer(0.15, 0.2)}
+            >
+              <Button
+              size="lg"
+                label="See All Solutions"
+                onClick={() => navigate("/services")}
+              />
+            </AnimatedWrapper>
       </div>
     </section>
   );
