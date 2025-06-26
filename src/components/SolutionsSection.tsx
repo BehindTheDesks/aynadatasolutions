@@ -1,4 +1,4 @@
-import React, { useLayoutEffect, useRef, FC } from "react";
+import React, { useLayoutEffect, useRef, } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import GridPattern from "./GridPattern";
@@ -86,7 +86,7 @@ const textData: TextSectionData[] = [
   },
 ];
 
-const SolutionsSection: FC = () => {
+const SolutionsSection: React.FC = () => {
   const componentRef = useRef<HTMLDivElement>(null);
   const textSectionsRef = useRef<HTMLDivElement[]>([]);
 
