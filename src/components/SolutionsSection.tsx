@@ -1,88 +1,49 @@
-import React, { useLayoutEffect, useRef, } from "react";
+import React, { useLayoutEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import GridPattern from "./GridPattern";
+import Chip from "./Chip";
 
 gsap.registerPlugin(ScrollTrigger);
 
 interface TextSectionData {
+  chipText: string;
   header: string;
   subtext: string;
-  cta: string;
+  cta?: string;
 }
 
 const textData: TextSectionData[] = [
   {
-    header: "Discover Your Data",
+    chipText: "Foundation & Trust",
+    header: "Laying the Groundwork for Trusted, Actionable Data",
     subtext:
-      "Our platform analyzes millions of data points to provide you with unparalleled insights. See trends as they happen.",
-    cta: "Learn More",
+      "Before data can deliver insight, value, or innovation, it must be trusted. That trust begins with how it is governed,protected, structured, and shared.At AYNA, we help organizations build resilient data foundations that inspire confidence, ensure compliance, and unlock cross-functional clarity.",
+    // cta: "Learn More",
   },
   {
-    header: "Unlock Growth Patterns",
+    chipText: "Intelligence & Automation",
+
+    header: "Transforming Data into Direction, Clarity, and Competitive Edge",
     subtext:
-      "Identify key drivers for growth and understand the market dynamics affecting your business in real-time.",
-    cta: "Start Analyzing",
+      "Data becomes truly valuable when it sharpens your ability to see clearly, act decisively, and adapt quickly. AYNA helps public and private institutions move from spreadsheets and static dashboards to real-time intelligence and predictive systems; grounded in context, driven by purpose.",
+    // cta: "Start Analyzing",
   },
   {
-    header: "Make Smarter Decisions",
+    chipText: "Growth & Execution",
+
+    header: "Bridging Strategy and Value: From Vision to Bottom Line",
     subtext:
-      "Leverage predictive analytics to forecast future outcomes and make data-driven decisions with confidence.",
-    cta: "Get a Demo",
+      "At AYNA, we don’t just help you understand your data’s potential, we help you turn it into growth, efficiency, and competitive advantage. This is where insight becomes strategy and ideas become execution. We work alongside teams across the organization to uncover monetization opportunities, drive transformation initiatives, and deliver outcomes that matter",
+    // cta: "Get a Demo",
   },
   {
-    header: "Mae Smarter Decisions",
+    chipText: " People & Capacity",
+
+    header: "Empowering Teams to Sustain and Scale the Data Journey",
     subtext:
-      "Leverage predictive analytics to forecast future outcomes and make data-driven decisions with confidence.",
-    cta: "Get a Demo",
-  },
-  {
-    header: "Mke Smarter Decisions",
-    subtext:
-      "Leverage predictive analytics to forecast future outcomes and make data-driven decisions with confidence.",
-    cta: "Get a Demo",
-  },
-  {
-    header: "ake Smarter Decisions",
-    subtext:
-      "Leverage predictive analytics to forecast future outcomes and make data-driven decisions with confidence.",
-    cta: "Get a Demo",
-  },
-  {
-    header: "iscover Your Data",
-    subtext:
-      "Our platform analyzes millions of data points to provide you with unparalleled insights. See trends as they happen.",
-    cta: "Learn More",
-  },
-  {
-    header: "scover Your Data",
-    subtext:
-      "Our platform analyzes millions of data points to provide you with unparalleled insights. See trends as they happen.",
-    cta: "Learn More",
-  },
-  {
-    header: "cover Your Data",
-    subtext:
-      "Our platform analyzes millions of data points to provide you with unparalleled insights. See trends as they happen.",
-    cta: "Learn More",
-  },
-  {
-    header: "Discover Your Data",
-    subtext:
-      "Our platform analyzes millions of data points to provide you with unparalleled insights. See trends as they happen.",
-    cta: "Learn More",
-  },
-  {
-    header: "Discover Your Data",
-    subtext:
-      "Our platform analyzes millions of data points to provide you with unparalleled insights. See trends as they happen.",
-    cta: "Learn More",
-  },
-  {
-    header: "Discover Your Data",
-    subtext:
-      "Our platform analyzes millions of data points to provide you with unparalleled insights. See trends as they happen.",
-    cta: "Learn More",
+      "Great data strategies don’t succeed on technology alone, they succeed when people are equipped to lead and sustain them. AYNA supports clients in building the internal capacity it takes to move from dependence to ownership. We help align teams, build skillsets, and embed data-driven culture at every level.",
+    // cta: "Get a Demo",
   },
 ];
 
@@ -156,10 +117,10 @@ const SolutionsSection: React.FC = () => {
       ref={componentRef}
       className="h-screen w-full flex justify-center items-center bg-data-dark-bg overflow-hidden"
     >
-     <GridPattern/>
+      <GridPattern />
 
-      <div className=" container relative w-[90%] h-[80%] max-w-7xl">
-        <div className="absolute bottom-0 left-0 w-full h-full flex justify-between items-end gap-[0.5%]">
+      <div className=" container relative w-[90%] h-[100%] max-w-7xl">
+        <div className="absolute bottom-0 left-0 w-full h-[50%] flex justify-between items-end gap-[0.5%]">
           {Array.from({ length: 30 }).map((_, index) => (
             <div
               key={index}
@@ -169,23 +130,33 @@ const SolutionsSection: React.FC = () => {
           ))}
         </div>
 
-        <div className="absolute inset-0 flex   justify-center items-center">
+        <div className="absolute inset-0 flex top-0 justify-center items-center">
           <div className="relative w-full md:w-[80%]  max-w-2xl text-center text-white">
             {textData.map((text, index) => (
               <div
                 key={index}
                 ref={addToRefs}
-                className="text-section absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full"
+                className="text-section flex flex-col justify-center items-center absolute top-0  left-1/2 -translate-x-1/2 -translate-y-1/2 w-full"
               >
-                <h2 className="text-4xl lg:text-5xl font-bold mb-4 text-shadow">
+                <div className="pb-5 ">
+                  <Chip
+                    textSize="xl"
+                    bgColor="bg-yellow-300/40"
+                    textColor="text-brand-yellow"
+                    border={false}
+                    label={`✨${text.chipText}`}
+                  />
+                </div>
+
+                <h2 className="text-4xl font-bold mb-4 text-shadow">
                   {text.header}
                 </h2>
-                <p className="text-base lg:text-lg leading-relaxed max-w-xl mx-auto mb-6 text-shadow">
+                <p className="text-base  leading-relaxed max-w-xl mx-auto mb-6 text-shadow">
                   {text.subtext}
                 </p>
-                <button className="text-base font-semibold px-6 py-3 rounded-full bg-blue-600 text-white cursor-pointer transition-colors hover:bg-blue-700 pointer-events-auto">
+                {/* <button className="text-base font-semibold px-6 py-3 rounded-full bg-blue-600 text-white cursor-pointer transition-colors hover:bg-blue-700 pointer-events-auto">
                   {text.cta}
-                </button>
+                </button> */}
               </div>
             ))}
           </div>
