@@ -169,8 +169,8 @@ const SolutionsSection: React.FC = () => {
           ))}
         </div>
 
-        <div className="absolute inset-0 flex bg-red-600  justify-center items-center">
-          <div className="relative w-full bg-red-600 md:w-[80%]  max-w-2xl text-center text-white">
+        <div className="absolute inset-0 flex   justify-center items-center">
+          <div className="relative w-full md:w-[80%]  max-w-2xl text-center text-white">
             {textData.map((text, index) => (
               <div
                 key={index}
