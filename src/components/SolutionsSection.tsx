@@ -148,10 +148,10 @@ const SolutionsSection: React.FC = () => {
                   />
                 </div>
 
-                <h2 className="text-4xl font-bold mb-4 text-shadow">
+                <h2 className=" text-2xl md:text-4xl font-bold mb-4 text-shadow">
                   {text.header}
                 </h2>
-                <p className="text-base  leading-relaxed max-w-xl mx-auto mb-6 text-shadow">
+                <p className="text-sm md:text-base  leading-relaxed max-w-xl mx-auto mb-6 text-shadow">
                   {text.subtext}
                 </p>
                 {/* <button className="text-base font-semibold px-6 py-3 rounded-full bg-blue-600 text-white cursor-pointer transition-colors hover:bg-blue-700 pointer-events-auto">
