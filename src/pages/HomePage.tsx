@@ -5,6 +5,7 @@ import AboutSection from "../components/AboutSection";
 import TechServicesSection from "../components/TechServicesSection";
 import GlobalNetworkSection from "../components/GlobalNetworkSection";
 import BriefSection from "../components/BriefSection";
+import SolutionsSection from "../components/SolutionsSection";
 
 
 function HomePage() {
@@ -16,6 +17,7 @@ function HomePage() {
       <AboutSection /> {/* Add the new section */}
       <BriefSection/>
       <GlobalNetworkSection /> {/* Add the new section */}
+      <SolutionsSection/>
       {/* <PortfolioSectionV2 /> 
       <ServicesSection/>
 

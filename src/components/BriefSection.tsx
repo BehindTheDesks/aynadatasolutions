@@ -40,6 +40,9 @@ function BriefSection() {
       text:"Talent, ethics, and inclusion in the data economy"
     },
   ]
+  
+
+  
 
   return (
     <section
@@ -72,13 +75,13 @@ function BriefSection() {
           </motion.h1>
         </AnimatedWrapper>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-8 md:gap-x-16 items-center">
+        <div className="grid grid-cols-1 mt-16 lg:grid-cols-2 gap-x-8 md:gap-x-16 items-center">
           {" "}
           {/* Increased gap */}
           {/* Left Column: Text Content */}
           <AnimatedWrapper
             variants={staggerContainer(0.25, 0.1)}
-            className="text-center lg:text-left relative z-10 order-2 lg:order-1  py-8 lg:py-0"
+            className="text-center lg:text-left relative z-10 order-2 lg:order-1   lg:py-0"
           >
             <motion.h3 // This H1 will apply its fadeInUp to all direct children spans
               variants={fadeInUp(0.7, 0.1)} // Overall animation for the H1 block
@@ -103,15 +106,21 @@ function BriefSection() {
               governance, AI, and transformation in Africa.
             </p> 
 
-            <motion.div variants={fadeInUp(0.7, 0.1)} className="grid grid-cols-2 gap-3">
+            {/* <motion.div variants={fadeInUp(0.7, 0.1)} className="grid grid-col-1 md:grid-cols-2 gap-7">
               {
                 briefList?.map((brief, id) => (
-                  <div key={id} className="h-[50px]  p-9 md:p-5 text-center hover:scale-105 transition ease-in-out text-sm flex justify-center items-center bg-brand-yellow/60 rounded-xl">
+                  <div key={id} className="h-[10px] bg-tech-card-bg backdrop-blur-md border border-tech-card-border 
+                  rounded-card-tech p-6 sm:p-8 shadow-card-tech-main max-w-[25rem]
+                  flex flex-col justify-center items-center overflow-hidden group text-center text-sm
+                  transition-all duration-300 ease-out hover:shadow-brand-yellow/50 hover:border-white/20  ">
+                      <div
+        className={`absolute inset-0 bg-brand-yellow/10  opacity-30  group-hover:opacity-50 transition-opacity duration-300 -z-10`}
+      ></div>
                     {brief?.text}
                   </div>
                 ))
               }
-            </motion.div>
+            </motion.div> */}
 
             <div className="w-full pt-9 flex md:justify-start justify-center">
               <Button
