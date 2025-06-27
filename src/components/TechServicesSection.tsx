@@ -114,7 +114,7 @@ function TechServicesSection() {
   const navigate = useNavigate()
 
   return (
-    <section id="tech-services" className="relative py-20 md:py-28 bg-tech-bg">
+    <section id="tech-services" className="relative bg-tech-bg">
       <GridPattern />
 
       <div className="container flex flex-col justify-center z-10 relative items-center mx-auto px-4 sm:px-6 lg:px-8">
@@ -123,11 +123,12 @@ function TechServicesSection() {
           className="text-center mb-8 md:mb-8"
         >
           <Chip
-            textSize="xl"
+            // textSize="xl"
             bgColor="bg-yellow-300/40"
             textColor="text-brand-yellow"
             border={false}
             label="✨What We Do"
+            className="text-xs md:text-xl"
           />
         </AnimatedWrapper>
         <AnimatedWrapper
@@ -161,7 +162,7 @@ function TechServicesSection() {
               className="mx-1"
             />
           </motion.h1>
-          <p className="text-lg sm:text-xl text-data-text-muted max-w-3xl mx-auto mt-4 leading-relaxed">
+          <p className="text-base sm:text-xl text-data-text-muted max-w-3xl mx-auto mt-4 leading-relaxed">
             We work with forward-looking leaders to transform data from a cost
             centre into a competitive advantage. Our services include.
           </p>

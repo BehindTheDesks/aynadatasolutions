@@ -13,7 +13,7 @@ function GlobalNetworkSection() {
   return (
     <section
       id="global-network"
-      className="py-20 md:py-32  bg-data-dark-bg  text-global-text-primary relative overflow-hidden"
+      className=" bg-data-dark-bg  text-global-text-primary relative overflow-hidden"
     >
      <GridPattern/>
 

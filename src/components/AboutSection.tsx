@@ -45,7 +45,7 @@ function AboutSection() {
             className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-data-text-main leading-tight tracking-tighter mb-6"
           >
             {/* Compose the headline */}
-            <motion.span variants={staticTextPartVariant}> Why</motion.span>
+            <motion.span variants={staticTextPartVariant}>Why&nbsp;</motion.span>
 
             <AnimatedHighlightedWord
               word="AYNA"
@@ -72,7 +72,7 @@ function AboutSection() {
               {/* Compose the headline */}
               <motion.span variants={staticTextPartVariant}>
                 {" "}
-                Turning
+                Turning&nbsp;
               </motion.span>
 
               <AnimatedHighlightedWord
@@ -82,7 +82,7 @@ function AboutSection() {
                 className="mx-1"
               />
 
-              <motion.span variants={staticTextPartVariant}> Into</motion.span>
+              <motion.span variants={staticTextPartVariant}>&nbsp;Into</motion.span>
               <br className="md:hidden"/>
               <AnimatedHighlightedWord
                 word="Clarity,"
@@ -96,13 +96,13 @@ function AboutSection() {
               </motion.span>
             </motion.h3>
 
-            <p className="text-data-text-muted text-base sm:text-xl leading-relaxed mb-8">
+            <p className="text-data-text-muted text-xs sm:text-xl leading-relaxed mb-8">
               It's particularly useful for projects that need immediate impact
               and minimal delay, like generative AI solutions, real-time
               analytics, and immersive user experiences. We help you deliver
               excellence, efficiently.
             </p>
-            <div className="w-full flex md:justify-start justify-center">
+            <div className="w-full flex lg:justify-start justify-center">
 
               <Button
               size="lg"

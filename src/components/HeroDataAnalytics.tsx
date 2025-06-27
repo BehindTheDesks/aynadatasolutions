@@ -23,7 +23,7 @@ function HeroDataAnalytics() {
   return (
     <section
       id="hero-data"
-      className="relative bg-data-dark-bg min-h-screen flex items-center justify-center overflow-hidden pt-28 pb-16 md:pt-36 md:pb-20"
+      className="relative bg-data-dark-bg min-h-screen flex items-center justify-center overflow-hidden pt-28 md:pt-36 md:pb-10"
     >
       {" "}
       {/* Adjusted padding for overall balance */}
@@ -79,7 +79,7 @@ function HeroDataAnalytics() {
 
             <motion.p
               variants={fadeInUp(0.7, 0.2)}
-              className="text-lg sm:text-lg  text-data-text-muted max-w-md mx-auto lg:mx-0 mb-8"
+              className="text-base sm:text-lg  text-data-text-muted max-w-md mx-auto lg:mx-0 mb-8"
             >
               We partner with leading organizations across Africa to transform
               data into a strategic advantage through governance, analytics,
@@ -276,8 +276,8 @@ function HeroDataAnalytics() {
         </div>
       </div>
       {/* Subtle Background Blobs (same as before, keep them for overall depth) */}
-      <div className="absolute -bottom-20 -left-20 w-64 h-64 bg-data-primary/5 rounded-full filter blur-2xl opacity-50 -z-0"></div>
-      <div className="absolute -top-20 -right-20 w-72 h-72 bg-data-secondary/5 rounded-full filter blur-2xl opacity-50 -z-0"></div>
+      {/* <div className="absolute -bottom-20 -left-20 w-64 h-64 bg-data-primary/5 rounded-full filter blur-2xl opacity-50 -z-0"></div>
+      <div className="absolute -top-20 -right-20 w-72 h-72 bg-data-secondary/5 rounded-full filter blur-2xl opacity-50 -z-0"></div> */}
     </section>
   );
 }

@@ -69,7 +69,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
             </motion.div>
           )}
         </div>
-        <h3 className="text-xl sm:text-2xl font-semibold capitalize text-tech-text-primary leading-tight">
+        <h3 className="text-lg sm:text-xl font-semibold capitalize text-tech-text-primary leading-tight">
           {service.title}
         </h3>
       </div>

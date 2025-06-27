@@ -140,7 +140,7 @@ const SolutionsSection: React.FC = () => {
               >
                 <div className="pb-5 ">
                   <Chip
-                    textSize="xl"
+                    textSize="lg"
                     bgColor="bg-yellow-300/40"
                     textColor="text-brand-yellow"
                     border={false}

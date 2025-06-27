@@ -17,7 +17,7 @@ export const AnimatedWrapper: React.FC<AnimatedWrapperProps> = ({
   variants,
   className,
   threshold = 0.15, // Lower threshold for earlier trigger
-  triggerOnce = true,
+  triggerOnce = false,
   ...motionProps // Collect other motion props
 }) => {
   const controls = useAnimation();

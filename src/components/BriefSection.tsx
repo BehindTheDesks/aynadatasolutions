@@ -47,7 +47,7 @@ function BriefSection() {
   return (
     <section
       id="brief"
-      className="py-16 bg-data-dark-bg relative overflow-hidden"
+      className=" bg-data-dark-bg relative overflow-hidden "
     >
       <GridPattern />
 
@@ -63,7 +63,7 @@ function BriefSection() {
             className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-data-text-main leading-tight tracking-tighter "
           >
             {/* Compose the headline */}
-            <motion.span variants={staticTextPartVariant}>The</motion.span>
+            <motion.span variants={staticTextPartVariant}>The&nbsp;</motion.span>
 
             <AnimatedHighlightedWord
               word="AYNA"
@@ -71,11 +71,11 @@ function BriefSection() {
               textColorClass="text-data-accent"
               className="mx-1"
             />
-            <motion.span variants={staticTextPartVariant}>Brief</motion.span>
+            <motion.span variants={staticTextPartVariant}>&nbsp;Brief</motion.span>
           </motion.h1>
         </AnimatedWrapper>
 
-        <div className="grid grid-cols-1 mt-16 lg:grid-cols-2 gap-x-8 md:gap-x-16 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-8 md:gap-x-16 items-center">
           {" "}
           {/* Increased gap */}
           {/* Left Column: Text Content */}
@@ -90,7 +90,7 @@ function BriefSection() {
               {/* Compose the headline */}
               <motion.span variants={staticTextPartVariant}>
                 {" "}
-                Insights That Drive Data-Led &nbsp;
+                Insights That Drive Data-Led&nbsp;
               </motion.span>
 
               <AnimatedHighlightedWord
@@ -101,7 +101,7 @@ function BriefSection() {
               />
             </motion.h3>
 
-            <p className="text-data-text-muted text-base sm:text-xl leading-relaxed mb-8">
+            <p className="text-data-text-muted text-xs sm:text-xl leading-relaxed mb-8">
               Our thought leadership platform explores what&apos;s next for data,
               governance, AI, and transformation in Africa.
             </p> 
