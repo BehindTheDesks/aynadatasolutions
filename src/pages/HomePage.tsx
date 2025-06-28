@@ -14,8 +14,9 @@ function HomePage() {
   return (
     <>
       <HeroDataAnalytics /> {/* Use the new Hero */}
-      <TechServicesSection />
       <AboutSection /> {/* Add the new section */}
+
+      <TechServicesSection />
       <BriefSection/>
       {/* <GlobalNetworkSection />  */}
       <BuildWith/>
