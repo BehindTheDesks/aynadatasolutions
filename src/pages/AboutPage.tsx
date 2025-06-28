@@ -9,6 +9,9 @@ import aboutImage1 from "../assets/images/africa-ai.jpg";
 import aboutImage2 from "../assets/images/world-net.jpg";
 import aboutImage3 from "../assets/images/charts.jpg";
 import aboutImage4 from "../assets/images/rural-modern.jpg";
+import aboutImage5 from "../assets/images/handshake.jpg";
+import aboutImage6 from "../assets/images/server.jpg";
+
 import Button from "../components/Button";
 import { useNavigate } from "react-router-dom";
 import ImageSlider from "../components/ImageSlider";
@@ -26,17 +29,14 @@ function AboutPage() {
     <section className="relative bg-data-dark-bg min-h-screen flex items-center justify-center overflow-hidden pt-28 pb-16 md:pt-36 md:pb-20">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <Section1 />
-        <div className="h-[50px] lg:h-0"/>
+        <div className="h-[50px] lg:h-0" />
         <Section2 />
-        <Section3 />
+        <div className="h-[50px] lg:h-[200px]" />
 
-        <p>
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Officiis,
-          laboriosam aspernatur. Porro quae blanditiis aut architecto distinctio
-          corrupti esse deleniti quia dicta impedit laudantium cumque, ipsum
-          ducimus iure quidem totam modi incidunt sit odio eos laborum? Vel iure
-          numquam minus.
-        </p>
+        <Section3 />
+        <div className="h-[50px]" />
+
+ 
       </div>
 
       {/* Subtle Background Blobs (optional, similar to Hero if you like the effect) */}
@@ -170,7 +170,6 @@ const Section2 = () => {
 
   return (
     <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-8 md:gap-x-16 items-center">
-      
       <div className="relative min-h-[350px] sm:min-h-[450px] md:min-h-[550px] lg:min-h-[600px] order-2 lg:order-2 lg:mt-12 flex justify-center items-center">
         <div className="max-w-xl mx-auto px-4 ">
           {questions?.map((question, index) => (
@@ -247,7 +246,7 @@ const Section3 = () => {
       <div className="relative h-[350px] sm:h-[450px] md:h-[550px] lg:h-[600px] order-1 lg:order-2 mt-12 lg:mt-0 pointer-events-none lg:pointer-events-auto">
         {/* Image 3 - Smaller, foreground */}
         <FloatingImage
-          src={aboutImage3}
+          src={aboutImage5}
           alt="Modern office vibe"
           className="w-[70%] sm:w-[55%] md:w-[420px] lg:w-[420px] bottom-[10%] right-[5%] lg:right-[10%]  z-0"
           rotate={-3}
@@ -255,7 +254,7 @@ const Section3 = () => {
           // aspectRatio="aspect-[2/4]"
         />
         <FloatingImage
-          src={aboutImage2}
+          src={aboutImage6}
           alt="Creative process sketches"
           className="w-[50%] sm:w-[45%] md:w-[240px] lg:w-[280px] top-[30%] left-[15%] lg:left-[10%] z-20"
           rotate={8}
@@ -265,27 +264,61 @@ const Section3 = () => {
       </div>
       <AnimatedWrapper
         variants={staggerContainer(0.25, 0.1)}
-        className="text-center lg:text-left relative z-10 order-2 lg:order-1 py-8 lg:py-0"
+        className="text-center flex flex-col justify-center lg:items-start items-center lg:text-left relative z-10 order-1 lg:order-1 py-8 lg:py-0"
       >
+        <AnimatedWrapper
+          variants={fadeInUp(0.6)}
+          className="text-center w-60 mb-8 md:mb-8"
+        >
+          <Chip
+            // textSize="xl"
+            bgColor="bg-yellow-300/40"
+            textColor="text-brand-yellow"
+            border={false}
+            label="✨How We Work"
+            className="text-base md:text-xl"
+          />
+        </AnimatedWrapper>
         <motion.h1
           variants={fadeInUp(0.7, 0)} // Delay 0 for first element in stagger
           className="text-4xl sm:text-6xl md:text-7xl font-extrabold text-data-text-main leading-tight tracking-tighter mb-6"
         >
-          What&apos;s in <br className="hidden sm:block" /> our{" "}
           <AnimatedHighlightedWord
-            word=" Future? "
-            highlightColorClass="bg-[#FFD700]/50" // Example different highlight
-            textColorClass="text-[#FFD700]" // Ensure data-accent is defined
+            word="Partnership"
+            highlightColorClass="bg-white/50" // Example different highlight
+            textColorClass="text-white" // Ensure data-accent is defined
             className="mx-1"
           />
+          .
+          <AnimatedHighlightedWord
+            word="Precision"
+            highlightColorClass="bg-yellow-200/50" // Example different highlight
+            textColorClass="text-brand-yellow" // Ensure data-accent is defined
+            className="mx-1"
+          />
+          .
+          <AnimatedHighlightedWord
+            word="Possibility"
+            highlightColorClass="bg-white/50" // Example different highlight
+            textColorClass="text-white" // Ensure data-accent is defined
+            className="mx-1"
+          />
+          .
         </motion.h1>
 
         <motion.p
           variants={fadeInUp(0.7, 0.2)} // Staggered delay
           className="text-base sm:text-lg md:text-xl text-data-text-main max-w-lg mx-auto lg:mx-0 mb-8 leading-relaxed"
         >
-          To be Africa&apos;s premier partner for unlocking value through data,
-          people, and intelligent technology.
+          Every engagement begins with understanding your mission, your data,
+          and your constraints. From there, we co- create a roadmap tailored to
+          your goals, maturity level, and operating model. 
+          <br/>
+          <br/>
+
+          Whether you&apos;re
+          launching a national data strategy or building your first analytics
+          team, we meet you where you are and grow with you
         </motion.p>
         <div className="flex justify-center lg:justify-start ">
           <Button label="Reach Out Now" onClick={() => navigate("/contact")} />
