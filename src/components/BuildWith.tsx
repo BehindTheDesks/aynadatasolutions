@@ -7,6 +7,7 @@ import { fadeInUp } from "./animations/variants";
 import AnimatedHighlightedWord from "./AnimatedHighlightedWord";
 import Button from "./Button";
 import { useNavigate } from "react-router-dom";
+import StackingGrid from "./effects/StackingGrid";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -74,11 +75,12 @@ const BuildWith: React.FC<StackingGridProps> = ({
     <section
       id="global-network"
       ref={componentRef}
-      className=" bg-data-dark-bg  text-global-text-primary relative overflow-hidden pt-10"
+      className=" bg-data-dark-bg text-global-text-primary relative overflow-hidden mt-14"
     >
       <GridPattern />
-      <div className="container h-screen lg:h-[60vh] flex lg:flex-row flex-col justify-center items-center mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="w-full h-[20%] lg:h-full mt-3 lg:overflow-visible overflow-hidden lg:flex-1 ">
+      <StackingGrid className="lg:hidden "/>
+      <div className="container h-[60vh] flex lg:flex-row flex-col justify-center items-center mx-auto px-4 sm:px-6 lg:px-8 relative z-10 rounded-3xl">
+        <div className="w-full h-[20%] lg:h-full mt-3 lg:inline hidden lg:flex-1 ">
           <div
             className="grid gap-2  sm:gap-3 w-full max-w-5xl"
             style={{
@@ -119,7 +121,7 @@ const BuildWith: React.FC<StackingGridProps> = ({
 
           <motion.p
             variants={fadeInUp(0.7, 0.2)}
-            className="text-lg sm:text-xl text-center text-data-text-muted leading-relaxed"
+            className="text-lg sm:text-xl text-center text-data-text-main lg:text-data-text-muted leading-relaxed"
           >
             Ready to unlock measurable value from your data? Book a strategy
             conversation with our team.
@@ -135,7 +137,7 @@ const BuildWith: React.FC<StackingGridProps> = ({
             />
           </motion.div>
         </div>
-        <div className="w-full h-[20%] lg:h-full mt-3 lg:overflow-visible overflow-hidden lg:flex-1 ">
+        <div className="w-full h-[20%] lg:h-full mt-3 lg:inline hidden lg:flex-1 ">
           <div
             className="grid gap-2 sm:gap-3 w-full max-w-5xl"
             style={{

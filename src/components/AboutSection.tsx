@@ -29,7 +29,7 @@ function AboutSection() {
   return (
     <section
       id="about-us"
-      className="py-16 bg-data-dark-bg relative overflow-hidden"
+      className="py-16 bg-data-dark-bg relative overflow-hidden mt-14"
     >
       <GridPattern />
 
@@ -38,7 +38,7 @@ function AboutSection() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <AnimatedWrapper
           variants={fadeInUp(0.6)}
-          className="mb-10 text-center lg:px-48"
+          className="text-center lg:px-48"
         >
           <motion.h1 // This H1 will apply its fadeInUp to all direct children spans
             variants={fadeInUp(0.7, 0.1)} // Overall animation for the H1 block
@@ -96,7 +96,7 @@ function AboutSection() {
               </motion.span>
             </motion.h3>
 
-            <p className="text-data-text-muted text-xs sm:text-xl leading-relaxed mb-8">
+            <p className="text-data-text-muted text-base sm:text-xl leading-relaxed mb-8">
               It's particularly useful for projects that need immediate impact
               and minimal delay, like generative AI solutions, real-time
               analytics, and immersive user experiences. We help you deliver
@@ -114,7 +114,7 @@ function AboutSection() {
 
           </AnimatedWrapper>
           {/* Right Column: Floating Images Area */}
-          <div className="relative h-[350px] sm:h-[450px] md:h-[550px] lg:h-[600px] order-1  mt-12 lg:mt-0 pointer-events-none lg:pointer-events-auto">
+          <div className="relative h-[350px] sm:h-[450px] md:h-[550px] lg:h-[600px] order-1   pointer-events-none lg:pointer-events-auto">
             {/* Note: pointer-events-none on parent can be tricky if images should be clickable later */}
             {/* Image 1 - Largest, slightly back */}
             <FloatingImage

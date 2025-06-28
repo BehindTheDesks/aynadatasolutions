@@ -47,7 +47,7 @@ function BriefSection() {
   return (
     <section
       id="brief"
-      className=" bg-data-dark-bg relative overflow-hidden "
+      className=" bg-data-dark-bg relative overflow-hidden mt-14 "
     >
       <GridPattern />
 
@@ -90,7 +90,7 @@ function BriefSection() {
               {/* Compose the headline */}
               <motion.span variants={staticTextPartVariant}>
                 {" "}
-                Insights That Drive Data-Led&nbsp;
+                Insights That Drive <br/> Data-Led&nbsp;
               </motion.span>
 
               <AnimatedHighlightedWord
@@ -101,7 +101,7 @@ function BriefSection() {
               />
             </motion.h3>
 
-            <p className="text-data-text-muted text-xs sm:text-xl leading-relaxed mb-8">
+            <p className="text-data-text-muted text-base sm:text-xl leading-relaxed mb-8">
               Our thought leadership platform explores what&apos;s next for data,
               governance, AI, and transformation in Africa.
             </p> 
@@ -122,7 +122,7 @@ function BriefSection() {
               }
             </motion.div> */}
 
-            <div className="w-full pt-9 flex md:justify-start justify-center">
+            <div className="w-full pt-5 flex lg:justify-start justify-center">
               <Button
                 size="lg"
                 label="Visit The AYNA Brief"
@@ -134,13 +134,40 @@ function BriefSection() {
           <div className="relative h-[350px] sm:h-[450px] md:h-[550px] lg:h-[600px] order-1 lg:order-2  pointer-events-none lg:pointer-events-auto">
             {/* Note: pointer-events-none on parent can be tricky if images should be clickable later */}
             {/* Image 1 - Largest, slightly back */}
-            <FloatingImage
+               <FloatingImage
               src={aboutImage1}
               alt="Dynamic team working"
-              className="w-[70%] sm:w-[55%] md:w-[420px] lg:w-[420px] top-[25%] left-[15%] lg:left-[10%] z-0"
+              className="w-[60%] sm:w-[55%] md:w-[280px] lg:w-[320px] top-[5%] left-[10%] lg:left-[5%] z-10"
               rotate={-5}
               floatDelay={0.1}
               aspectRatio="aspect-[4/3]"
+            />
+            {/* Image 2 - Medium, middle ground */}
+            <FloatingImage
+              src={aboutImage2}
+              alt="Creative process sketches"
+              className="w-[50%] sm:w-[45%] md:w-[240px] lg:w-[280px] top-[30%] right-[5%] lg:right-[10%] z-20"
+              rotate={8}
+              floatDelay={0.3}
+              aspectRatio="aspect-square"
+            />
+            {/* Image 3 - Smaller, foreground */}
+            <FloatingImage
+              src={aboutImage3}
+              alt="Modern office vibe"
+              className="w-[40%] sm:w-[35%] md:w-[200px] lg:w-[220px] bottom-[10%] left-[25%] lg:left-[20%] z-30"
+              rotate={-3}
+              floatDelay={0.5}
+              aspectRatio="aspect-[3/4]"
+            />
+            {/* Image 4 - Small accent image */}
+            <FloatingImage
+              src={aboutImage4}
+              alt="Abstract data visualization"
+              className="w-[30%] sm:w-[25%] md:w-[160px] lg:w-[180px] top-[65%] right-[20%] lg:right-[25%] z-0 opacity-80" // Behind others
+              rotate={12}
+              floatDelay={0.2}
+              aspectRatio="aspect-video"
             />
             {/* Image 2 - Medium, middle ground */}
           </div>
