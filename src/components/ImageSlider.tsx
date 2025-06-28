@@ -5,9 +5,9 @@ interface ImageSliderProps {
   images: string[];
   height?: string;
   width?: string;
-  dotPosition?: 'right' | 'bottom';
+  dotPosition?: 'right' | 'bottom'; // inside container
   direction?: 'horizontal' | 'vertical';
-  scrollInterval?: number; // in ms
+  scrollInterval?: number;
   className?: string;
 }
 
@@ -22,11 +22,11 @@ const ImageSlider: React.FC<ImageSliderProps> = ({
 }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const isVertical = direction === 'vertical';
-  const intervalRef = useRef< number |null>(null);
+  const intervalRef = useRef<number | null>(null);
 
   const goToIndex = (index: number) => {
     setCurrentIndex(index);
-    resetAutoScroll(); // reset when manually selected
+    resetAutoScroll();
   };
 
   const nextSlide = () => {
@@ -40,7 +40,6 @@ const ImageSlider: React.FC<ImageSliderProps> = ({
     }
   };
 
-  // Setup auto-scroll
   useEffect(() => {
     if (scrollInterval) {
       intervalRef.current = setInterval(nextSlide, scrollInterval);
@@ -53,13 +52,11 @@ const ImageSlider: React.FC<ImageSliderProps> = ({
 
   return (
     <div
-      className={`relative overflow-hidden flex ${
-        dotPosition === 'right' ? 'flex-row' : 'flex-col'
-      } ${className}`}
+      className={`relative overflow-hidden rounded-2xl ${className}`}
       style={{ width, height }}
     >
-      {/* Image container */}
-      <div className="flex-1 relative w-full h-full overflow-hidden rounded-2xl">
+      {/* Image display */}
+      <div className="relative w-full h-full">
         <AnimatePresence mode="wait">
           <motion.img
             key={images[currentIndex]}
@@ -72,25 +69,25 @@ const ImageSlider: React.FC<ImageSliderProps> = ({
             transition={{ duration: 0.5 }}
           />
         </AnimatePresence>
-      </div>
 
-      {/* Dots */}
-      <div
-        className={`${
-          dotPosition === 'right'
-            ? 'flex flex-col justify-center items-center ml-4'
-            : 'flex flex-row justify-center items-center mt-4'
-        } gap-2  w-5`}
-      >
-        {images.map((_, idx) => (
-          <button
-            key={idx}
-            onClick={() => goToIndex(idx)}
-            className={`w-3 h-3 rounded-full transition-all ${
-              idx === currentIndex ? 'bg-brand-yellow scale-125' : 'bg-gray-400'
-            }`}
-          />
-        ))}
+        {/* Dots inside image container */}
+        <div
+          className={`absolute ${
+            dotPosition === 'bottom'
+              ? 'bottom-4 left-1/2 -translate-x-1/2 flex-row'
+              : 'top-1/2 right-4 -translate-y-1/2 flex-col'
+          } flex items-center gap-2 z-10`}
+        >
+          {images.map((_, idx) => (
+            <button
+              key={idx}
+              onClick={() => goToIndex(idx)}
+              className={`w-3 h-3 rounded-full transition-all ${
+                idx === currentIndex ? 'bg-white scale-125' : 'bg-white/50'
+              }`}
+            />
+          ))}
+        </div>
       </div>
     </div>
   );
