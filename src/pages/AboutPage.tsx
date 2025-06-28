@@ -20,7 +20,6 @@ import ImageSlider from "../components/ImageSlider";
 // const aboutImage4 = "/images/about/data-visualization-abstract.jpg"; // Another placeholder
 
 function AboutPage() {
-  const navigate = useNavigate();
 
   return (
     <section className="relative bg-data-dark-bg min-h-screen flex items-center justify-center overflow-hidden pt-28 pb-16 md:pt-36 md:pb-20">
@@ -138,6 +137,7 @@ const Section1 = () => {
 
 
 const Section2 = () => {
+  const navigate = useNavigate();
 
   return (
     <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-8 md:gap-x-16 items-center">
@@ -200,6 +200,7 @@ const Section2 = () => {
 }
 
 const Section3 = () => {
+  const navigate = useNavigate();
 
   return (
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-8 md:gap-x-16 items-center">

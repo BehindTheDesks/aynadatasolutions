@@ -22,7 +22,7 @@ const ImageSlider: React.FC<ImageSliderProps> = ({
 }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const isVertical = direction === 'vertical';
-  const intervalRef = useRef<NodeJS.Timeout | null>(null);
+  const intervalRef = useRef< number |null>(null);
 
   const goToIndex = (index: number) => {
     setCurrentIndex(index);
