@@ -163,7 +163,7 @@ function ContactPage() {
                 </div>
                 <div className="relative">
                   <motion.input 
-                    type="number" 
+                    type="tel" 
                     name="phone_number" 
                     placeholder="Phone" 
                     value={formData.phone_number} 
