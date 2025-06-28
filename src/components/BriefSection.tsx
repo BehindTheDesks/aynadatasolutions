@@ -8,9 +8,9 @@ import AnimatedHighlightedWord from "./AnimatedHighlightedWord";
 import GridPattern from "./GridPattern";
 
 import FloatingImage from "./FloatingImage";
-import aboutImage1 from "../assets/images/team-dynamic.jpg";
-import aboutImage2 from "../assets/images/creative-process.jpg";
-import aboutImage3 from "../assets/images/office-vibe.jpg";
+import aboutImage1 from "../assets/images/africa-symbols-ai.jpg";
+import aboutImage2 from "../assets/images/ai-and-child.jpg";
+import aboutImage3 from "../assets/images/data-connected-africa.jpg";
 import aboutImage4 from "../assets/images/data-visualization-abstract.jpg";
 import Button from "./Button";
 import { useNavigate } from "react-router-dom";
