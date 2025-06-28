@@ -21,6 +21,7 @@ function HomePage() {
       {/* <GlobalNetworkSection />  */}
       <BuildWith/>
       <SolutionsSection/>
+      <div className="h-[300px] w-full"></div>
       {/* <PortfolioSectionV2 /> 
       <ServicesSection/>
 
