@@ -3,7 +3,7 @@ import { FiMinus, FiPlus } from 'react-icons/fi';
 
 interface FAQItemProps {
   question: string;
-  answer: string;
+  answer: any;
   defaultOpen?: boolean;
 }
 

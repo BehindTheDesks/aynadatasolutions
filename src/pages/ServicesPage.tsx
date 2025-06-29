@@ -14,72 +14,339 @@ import ai from "../assets/images/robot.png";
 import tree from "../assets/images/tree.png";
 import lightBulb from "../assets/images/light-bulb.png";
 import chess from "../assets/images/chess.png";
-
-
-
+import Chip from "../components/Chip";
+import FAQItem from "../components/FAQItem";
 
 // Placeholder images - update these paths
 // const aboutImage1 = "/images/about/team-dynamic.jpg";
 // const aboutImage2 = "/images/about/creative-process.png";
 // const aboutImage3 = "/images/about/office-vibe.jpg";
 // const aboutImage4 = "/images/about/data-visualization-abstract.jpg"; // Another placeholder
-interface ServicesInterface {
-  title:string;
-  description:string;
-  image: string;
-  reverse?:boolean;
 
+interface faqInterface {
+  question: string;
+  answer: any;
+}
+interface ServicesInterface {
+  chipText: string;
+  title: string;
+  description: string;
+  image: string;
+  reverse?: boolean;
+  FAQ?: faqInterface[];
 }
 
 function ServicesPage() {
   const navigate = useNavigate();
 
-  const services:ServicesInterface[] = [
+  const services: ServicesInterface[] = [
     {
-      title: "Data Governance & Policy Advisory",
-      description:"We design data governance frameworks, support regulatory compliance, and enable inter-agency interoperability. Our advisory services ensure secure, efficient, and compliant data practices across organizations, aligning operations with national and global standards while fostering collaboration and trust in data ecosystems.",
-      image:shield,
-
-    },
-
-     {
-      title: "Data Monetization Strategy & Execution",
-      description:"We develop and execute data monetization strategies through direct models like licensing and marketplaces, and indirect gains from efficiency and optimization. Our approach includes building sector-specific and national data marketplaces that unlock economic value, drive innovation, and position data as a strategic asset for sustainable revenue generation.",
-      image:money,
-      reverse:true,
-
-    },
-
-    
-     {
-      title: "Advanced Analytics & AI Solutions",
-      description:"We deliver advanced analytics and AI solutions, including predictive modeling, machine learning, and automation. From deploying generative and enterprise AI tools to crafting tailored use cases, we help organizations unlock insights, enhance decision-making, and drive innovation across both business and public sector environments.",
-      image:ai,
-
-    },
-
-    {
-      title: "Capacity Development & Institutional Training",
-      description:"We offer capacity development and institutional training through customized programs for public officials, private sector teams, and executives. Our offerings include AI literacy, data stewardship certification, and digital transformation bootcamps empowering stakeholders with the skills needed to lead in a data-driven world.",
-      image:tree,
-      reverse:true,
-
-    },
-
-    {
-      title: "Technology Talent Sourcing & Placement",
-      description:"We provide technology talent sourcing and placement services, offering both contract and permanent hires. Our support includes talent strategy development for digital transformation, workforce readiness assessments, and capability-building initiatives,ensuring organizations have the skilled professionals needed to scale and succeed in the digital economy.",
-      image:lightBulb,
-
-    },
+      chipText: "Foundation & Trust",
+      title: "Laying the Groundwork for Trusted, Actionable Data",
+      description:
+        "Before data can deliver insight, value, or innovation, it must be trusted. That trust begins with how it is governed, protected, structured, and shared. At AYNA, we help organizations build resilient data foundations that inspire confidence, ensure compliance, and unlock cross-functional clarity.",
+      image: shield,
+      FAQ: [
         {
-      title: "Strategy Consulting & Execution Support",
-      description:"We offer strategy consulting and execution support through organizational diagnostics, vision alignment, and performance planning. Our services include ecosystem mapping, stakeholder engagement, and program delivery, with a focus on business model innovation,especially for tech-driven sectors aiming to scale impact and drive sustainable growth.",
-      image:chess,
-      reverse:true,
+          question: "Data Governance",
+          answer: (
+            <p>
+              Strong governance turns data from a liability into a strategic
+              asset. We help organizations set clear rules, roles, and routines
+              for how data is created, used, and shared — ensuring it drives
+              strategic decisions and operational effectiveness.
+              <br />
+              Whether you're a public agency connecting siloed systems or a
+              growing enterprise navigating complexity, we support you to:
+              <br />
+              <br />
+              • Build governance frameworks tailored to your environment and
+              goals
+              <br />
+              • Define ownership and accountability for critical data assets'
+              <br />
+              • Improve data quality, consistency, and discoverability
+              <br />
+              • Enable interoperability across departments or agencies
+              <br />• Assess current maturity and develop a practical roadmap
+              forward
+            </p>
+          ),
+        },
 
-    }
-  ]
+        {
+          question: "Data Privacy & Protection",
+          answer: (
+            <p>
+              In today’s digital world, protecting personal data is not just
+              about compliance, it is about trust. AYNA helps organizations
+              treat privacy as both a core value and a competitive advantage.
+              <br />
+              We support clients to:
+              <br />
+              <br />
+              • Develop policies aligned with NDPR, GDPR, and other relevant
+              regulations
+              <br />
+              • Classify and manage sensitive data with care and accountability
+              <br />
+              • Embed privacy and security principles from the ground up
+              <br />
+              • Build resilience with breach readiness and recovery protocol
+              <br />
+              <br />
+              Whether handling citizen records or customer information, we help
+              you prove that data is safe in your hands — and back it with
+              action.
+            </p>
+          ),
+        },
+
+        {
+          question: "Data Quality & Architecture",
+          answer: (
+            <p>
+              Reliable insights depend on reliable data, and that starts with
+              solid architecture. AYNA helps organizations design and implement
+              systems that ensure accuracy, consistency, and scalability from
+              the start.
+              <br />
+              Whether you're unifying fragmented systems or preparing for
+              growth, we help you:
+              <br />
+              <br />
+              • Build tailored data architectures that reflect your goals and
+              scale
+              <br />
+              • Strengthen quality through validation, standardization, and
+              oversight
+              <br />
+              • Enable interoperability with unified models and system design
+              <br />
+              • Optimize data lifecycle management: from collection to archival
+              <br />• Embed quality monitoring into everyday operation
+            </p>
+          ),
+        },
+      ],
+    },
+
+    {
+      chipText: "Intelligence & Automation",
+
+      title: "Transforming Data into Direction, Clarity, and Competitive Edge",
+      description:
+        "Data becomes truly valuable when it sharpens your ability to see clearly, act decisively, and adapt quickly. AYNA helps public and private institutions move from spreadsheets and static dashboards to real-time intelligence and predictive systems; grounded in context, driven by purpose",
+      image: ai,
+
+      reverse: true,
+
+      FAQ: [
+        {
+          question: "Data Analytics",
+          answer: (
+            <p>
+              We believe analytics should solve real problems, not just generate
+              reports. We build analytical environments that connect strategy to
+              insight and insight to action.
+              <br />
+              Our services include:
+              <br />
+              <br />
+              • Use-case-driven analytics aligned with KPIs: from service
+              delivery to financial performance
+              <br />
+              • Self-service BI environments for leaders and frontline teams
+              <br />
+              • Integrated reporting across units, departments, or business
+              lines
+              <br />
+              • Predictive models to surface risks, trends, and opportunities
+              <br />• Visual storytelling that brings clarity to complexity
+              <br />
+              <br />
+              We help you understand your data and act on it with speed and
+              confidence.
+            </p>
+          ),
+        },
+
+        {
+          question: "AI & Automation",
+          answer: (
+            <p>
+              AI has the power to transform operations; only when used with
+              clarity and intent. AYNA helps organizations demystify AI and
+              implement it responsibly, unlocking value at the right pace
+              <br />
+              Our offerings include:
+              <br />
+              <br />
+              • AI strategy design: where, when, and how to apply it
+              <br />
+              • Development of intelligent agents, models, and NLP tools
+              <br />
+              • Cognitive search and machine learning integrations
+              <br />
+              • AI governance frameworks for transparency, fairness, and
+              accountability
+              <br />
+              • Capacity-building for teams to adopt, sustain, and evolve
+              solutions
+              <br />
+              <br />
+              We help you go from exploring AI to extracting real value
+              responsibly, sustainably, and aligned with your mission.
+            </p>
+          ),
+        },
+      ],
+    },
+
+    {
+      chipText: "Growth & Execution",
+
+      title: "Bridging Strategy and Value: From Vision to Bottom Line",
+      description:
+        "At AYNA, we don’t just help you understand your data’s potential, we help you turn it into growth, efficiency, and competitive advantage. This is where insight becomes strategy and ideas become execution. We work alongside teams across the organization to uncover monetization opportunities, drive transformation initiatives, and deliver outcomes that matter.",
+      image: tree,
+      
+      FAQ: [
+        {
+          question: "Data Monetization",
+          answer: (
+            <p>
+              Turning Data into Revenue, Efficiency, and Strategic Advantage
+              Data can do more than inform — it can deliver measurable value. At
+              AYNA, we help organizations move from insight to income by
+              identifying monetization opportunities that are ethical, scalable,
+              and aligned with your mission.
+              <br />
+              Our approach spans:
+              <br />
+              <br />
+              • Direct monetization through data products, licensing, and
+              strategic partnerships
+              <br />
+              • Indirect value creation by reducing costs, mitigating risk, and
+              driving smarter decisions
+              <br />
+              • Monetization readiness with clear roadmaps, asset valuation, and
+              policy design
+              <br />
+              • Predictive models to surface risks, trends, and opportunities
+              <br />• Visual storytelling that brings clarity to complexity
+              <br />
+              <br />
+              Whether you're commercializing a new data offering or exploring
+              internal gains, we partner with your teams to unlock the full
+              economic potential of your data.
+            </p>
+          ),
+        },
+
+        {
+          question: "Strategy & Consulting",
+          answer: (
+            <p>
+              AYNA’s consulting team serves as your strategic partner. We help
+              translate your data ambition into structured action.
+              <br />
+              We help you:
+              <br />
+              <br />
+              • Develop enterprise-level data and AI strategies
+              <br />
+              • Align data with corporate, national, or sector-wide goals
+              <br />
+              • Build modern operating models and governance structures
+              <br />
+              • Mobilize cross-functional teams around priority initiatives
+              <br />
+              • Guide executive and board-level decision-making
+              <br />
+            </p>
+          ),
+        },
+      ],
+    },
+
+    {
+      chipText: "People & Capacity",
+
+      title: "Empowering Teams to Sustain and Scale the Data Journey",
+      description:
+        "Great data strategies don’t succeed on technology alone, they succeed when people are equipped to lead and sustain them. AYNA supports clients in building the internal capacity it takes to move from dependence to ownership. We help align teams, build skillsets, and embed data-driven culture at every level.",
+           image: lightBulb,
+
+      reverse: true,
+
+      FAQ: [
+        {
+          question: "Capacity Building & Training",
+          answer: (
+            <p>
+              We design hands-on training that demystifies data and gives teams
+              the skills to lead transformation.
+              <br />
+              Our programs include:
+              <br />
+              <br />
+              • Executive briefings and board education
+              <br />
+              • Practical workshops on governance, analytics, and AI adoption
+              <br />
+              • Custom learning journeys for technical and non-technical staff
+              <br />
+              • AI literacy and use-case design for business functions
+              <br />• Change management support for internal adoption
+              <br />
+            </p>
+          ),
+        },
+
+        {
+          question: "Tech Talent Sourcing & Placement",
+          answer: (
+            <p>
+              Talent is often the missing piece in transformation. We help you
+              find and retain the people who will power your next chapter.
+              <br />
+              Our services include:
+              <br />
+              <br />
+              • Permanent and contract placements for data, engineering, and analytics roles.
+              <br />
+              • Talent pipelines aligned with your strategy.
+              <br />
+              • On-demand experts for high-impact projects.
+              <br />
+              • MSupport with onboarding, upskilling, and long-term retention.
+              <br />
+            </p>
+          ),
+        },
+      ],
+    },
+
+    // {
+    //   chipText: "",
+
+    //   title: "Technology Talent Sourcing & Placement",
+    //   description:
+    //     "We provide technology talent sourcing and placement services, offering both contract and permanent hires. Our support includes talent strategy development for digital transformation, workforce readiness assessments, and capability-building initiatives,ensuring organizations have the skilled professionals needed to scale and succeed in the digital economy.",
+    //   image: lightBulb,
+    // },
+    // {
+    //   chipText: "",
+
+    //   title: "Strategy Consulting & Execution Support",
+    //   description:
+    //     "We offer strategy consulting and execution support through organizational diagnostics, vision alignment, and performance planning. Our services include ecosystem mapping, stakeholder engagement, and program delivery, with a focus on business model innovation,especially for tech-driven sectors aiming to scale impact and drive sustainable growth.",
+    //   image: chess,
+    //   reverse: true,
+    // },
+  ];
 
   return (
     <section className="relative bg-data-dark-bg min-h-screen flex items-center justify-center overflow-hidden pt-28 pb-16 md:pt-36 md:pb-20">
@@ -127,55 +394,74 @@ function ServicesPage() {
             />
           </div>
         </div>
-        {
-          services.map(service => (
-             <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-8 md:gap-x-16 items-center">
-          <div className={`relative h-[350px] sm:h-[450px] md:h-[550px] lg:h-[600px] order-1 ${service?.reverse ? " lg:order-2" : " lg:order-1"} mt-12 lg:mt-0 pointer-events-none lg:pointer-events-auto`}>
-            <FloatingImage
-              src={service?.image}
-              alt="shield"
-              className="w-[70%] sm:w-[55%] md:w-[420px] lg:w-[420px] bottom-[10%] left-[15%] lg:left-[10%] z-0"
-              rotate={-3}
-              floatDelay={0.5}
-              borderHidden
-              // aspectRatio="aspect-[2/4]"
-            />
-          </div>
-          <AnimatedWrapper
-            variants={staggerContainer(0.25, 0.1)}
-            className={`text-center lg:text-left relative z- order-2   ${service?.reverse ? "lg:order-1" : "lg:order-2"} py-8 lg:py-0`}
-          >
-            <motion.h1
-              variants={fadeInUp(0.7, 0)} // Delay 0 for first element in stagger
-              className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-data-text-main leading-tight tracking-tighter mb-6"
+        {services.map((service) => (
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-8 md:gap-x-16 items-center mt-14">
+            <div
+              className={`relative h-[350px] sm:h-[450px] md:h-[550px] lg:h-[600px] order-1 ${
+                service?.reverse ? " lg:order-2" : " lg:order-1"
+              } mt-12 lg:mt-0 pointer-events-none lg:pointer-events-auto`}
             >
-             {service?.title}
-            </motion.h1>
-
-            <motion.p
-              variants={fadeInUp(0.7, 0.2)} // Staggered delay
-              className="text-base sm:text-lg md:text-xl text-data-text-muted max-w-lg mx-auto lg:mx-0 mb-8 leading-relaxed"
-            >
-             {service?.description}
-            </motion.p>
-            <div className="flex justify-center lg:justify-start ">
-              <Button
-                label="Reach Out Now"
-                onClick={() => navigate("/contact")}
+              <FloatingImage
+                src={service?.image}
+                alt="shield"
+                className="w-[70%] sm:w-[55%] md:w-[420px] lg:w-[420px] bottom-[10%] left-[15%] lg:left-[10%] z-0"
+                rotate={-3}
+                floatDelay={0.5}
+                borderHidden
+                // aspectRatio="aspect-[2/4]"
               />
             </div>
-          </AnimatedWrapper>
-          {/* Right Column: Floating Images Area */}
-        </div>
-          ))
-        }
+            <AnimatedWrapper
+              variants={staggerContainer(0.25, 0.1)}
+              className={`flex flex-col lg:items-start items-center  lg:text-left relative z- order-2   ${
+                service?.reverse ? "lg:order-1" : "lg:order-2"
+              } py-8 lg:py-0`}
+            >
+              <AnimatedWrapper
+                variants={fadeInUp(0.6)}
+                className="text-center w-fit mb-8 md:mb-8"
+              >
+                <Chip
+                  // textSize="xl"
+                  bgColor="bg-yellow-300/40"
+                  textColor="text-brand-yellow"
+                  border={false}
+                  label={`✨${service?.chipText}`}
+                  className="text-base md:text-xl"
+                />
+              </AnimatedWrapper>
+              <motion.h1
+                variants={fadeInUp(0.7, 0)} // Delay 0 for first element in stagger
+                className="text-3xl sm:text-4xl text-center md:text-5xl font-extrabold text-data-text-main leading-tight tracking-tighter mb-6"
+              >
+                {service?.title}
+              </motion.h1>
 
+              <motion.p
+                variants={fadeInUp(0.7, 0.2)} // Staggered delay
+                className="text-base md:text-lg text-center text-data-text-muted max-w-lg mx-auto lg:mx-0 mb-8 leading-relaxed"
+              >
+                {service?.description}
+              </motion.p>
 
-
-
-
-
-        
+              {service?.FAQ &&
+                service?.FAQ?.map((question, index) => (
+                  <FAQItem
+                    key={index}
+                    question={question?.question}
+                    answer={question?.answer}
+                  />
+                ))}
+              <div className="flex justify-center lg:justify-start mt-11 ">
+                <Button
+                  label="Reach Out Now"
+                  onClick={() => navigate("/contact")}
+                />
+              </div>
+            </AnimatedWrapper>
+            {/* Right Column: Floating Images Area */}
+          </div>
+        ))}
       </div>
 
       {/* Subtle Background Blobs (optional, similar to Hero if you like the effect) */}
