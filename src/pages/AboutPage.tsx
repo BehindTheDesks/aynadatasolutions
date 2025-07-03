@@ -31,12 +31,10 @@ function AboutPage() {
         <Section1 />
         <div className="h-[50px] lg:h-0" />
         <Section2 />
-        <div className="h-[50px] lg:h-[200px]" />
+        <div className="h-[50px] lg:h-[100px]" />
 
         <Section3 />
         <div className="h-[50px]" />
-
- 
       </div>
 
       {/* Subtle Background Blobs (optional, similar to Hero if you like the effect) */}
@@ -171,15 +169,34 @@ const Section2 = () => {
   return (
     <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-8 md:gap-x-16 items-center">
       <div className="relative min-h-[350px] sm:min-h-[450px] md:min-h-[550px] lg:min-h-[600px] order-2 lg:order-2 lg:mt-12 flex justify-center items-center">
-        <div className="max-w-xl mx-auto px-4 ">
-          {questions?.map((question, index) => (
-            <FAQItem
-              key={index}
-              question={question?.question}
-              answer={question?.answer}
+        <motion.div
+          variants={fadeInUp(0.7, 0)}
+          className="max-w-xl mx-auto px-4 "
+        >
+          <motion.h1
+            variants={fadeInUp(0.7, 0)} // Delay 0 for first element in stagger
+            className="text-4xl sm:text-4xl md:text-5xl font-extrabold text-center lg:mt-0 mt-16 text-data-text-main leading-tight tracking-tighter mb-6"
+          >
+            What sets us&nbsp;
+            {/* <br className="hidden sm:block" /> */}
+            <AnimatedHighlightedWord
+              word="Apart"
+              highlightColorClass="bg-yellow-200/50" // Example different highlight
+              textColorClass="text-brand-yellow" // Ensure data-accent is defined
+              className="mx-1"
             />
+          </motion.h1>
+
+          {questions?.map((question, index) => (
+            <motion.div variants={fadeInUp(0.7, 0)}>
+              <FAQItem
+                key={index}
+                question={question?.question}
+                answer={question?.answer}
+              />
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
       <AnimatedWrapper
         variants={staggerContainer(0.25, 0.1)}
@@ -312,13 +329,11 @@ const Section3 = () => {
         >
           Every engagement begins with understanding your mission, your data,
           and your constraints. From there, we co- create a roadmap tailored to
-          your goals, maturity level, and operating model. 
-          <br/>
-          <br/>
-
-          Whether you&apos;re
-          launching a national data strategy or building your first analytics
-          team, we meet you where you are and grow with you
+          your goals, maturity level, and operating model.
+          <br />
+          <br />
+          Whether you&apos;re launching a national data strategy or building
+          your first analytics team, we meet you where you are and grow with you
         </motion.p>
         <div className="flex justify-center lg:justify-start ">
           <Button label="Reach Out Now" onClick={() => navigate("/contact")} />

@@ -101,17 +101,26 @@ function BriefSection() {
               />
             </motion.h3>
 
-            <p className="text-data-text-muted text-base sm:text-xl leading-relaxed mb-8">
+            <p className="text-data-text-muted text-base sm:text-xl leading-relaxed mb-4">
               Our thought leadership platform explores what&apos;s next for data,
               governance, AI, and transformation in Africa.
             </p> 
+
+            <p className="lg:ml-4">
+              <ul className="text-data-text-muted lg:list-disc text-base sm:text-xl gap-4">
+                {briefList?.map((brief, index) => (
+                  <li key={index}>{brief?.text}</li>
+                ))}
+
+              </ul>
+            </p>
 
             {/* <motion.div variants={fadeInUp(0.7, 0.1)} className="grid grid-col-1 md:grid-cols-2 gap-7">
               {
                 briefList?.map((brief, id) => (
                   <div key={id} className="h-[10px] bg-tech-card-bg backdrop-blur-md border border-tech-card-border 
                   rounded-card-tech p-6 sm:p-8 shadow-card-tech-main max-w-[25rem]
-                  flex flex-col justify-center items-center overflow-hidden group text-center text-sm
+                  flex flex-col justify-center items-center overflow-hidden group text-left text-sm
                   transition-all duration-300 ease-out hover:shadow-brand-yellow/50 hover:border-white/20  ">
                       <div
         className={`absolute inset-0 bg-brand-yellow/10  opacity-30  group-hover:opacity-50 transition-opacity duration-300 -z-10`}

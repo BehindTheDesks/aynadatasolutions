@@ -123,8 +123,7 @@ const BuildWith: React.FC<StackingGridProps> = ({
             variants={fadeInUp(0.7, 0.2)}
             className="text-lg sm:text-xl text-center text-data-text-main lg:text-data-text-muted leading-relaxed"
           >
-            Ready to unlock measurable value from your data? Book a strategy
-            conversation with our team.
+            Ready to unlock measurable value from your data? Book a conversation with our team.
           </motion.p>
 
           <motion.div

@@ -16,6 +16,7 @@ import lightBulb from "../assets/images/light-bulb.png";
 import chess from "../assets/images/chess.png";
 import Chip from "../components/Chip";
 import FAQItem from "../components/FAQItem";
+import { p } from "framer-motion/client";
 
 // Placeholder images - update these paths
 // const aboutImage1 = "/images/about/team-dynamic.jpg";
@@ -30,7 +31,7 @@ interface faqInterface {
 interface ServicesInterface {
   chipText: string;
   title: string;
-  description: string;
+  description: any;
   image: string;
   reverse?: boolean;
   FAQ?: faqInterface[];
@@ -43,8 +44,10 @@ function ServicesPage() {
     {
       chipText: "Foundation & Trust",
       title: "Laying the Groundwork for Trusted, Actionable Data",
-      description:
-        "Before data can deliver insight, value, or innovation, it must be trusted. That trust begins with how it is governed, protected, structured, and shared. At AYNA, we help organizations build resilient data foundations that inspire confidence, ensure compliance, and unlock cross-functional clarity.",
+      description: <p>
+Before data can deliver insight, value, or innovation, it must be trusted. That trust begins with how it is governed, protected, structured, and shared.<br/> <br/> At AYNA, we help organizations build resilient data foundations that inspire confidence, ensure compliance, and unlock cross-functional clarity.
+      </p>
+        ,
       image: shield,
       FAQ: [
         {
@@ -56,6 +59,8 @@ function ServicesPage() {
               for how data is created, used, and shared — ensuring it drives
               strategic decisions and operational effectiveness.
               <br />
+              <br />
+
               Whether you're a public agency connecting siloed systems or a
               growing enterprise navigating complexity, we support you to:
               <br />
@@ -82,6 +87,8 @@ function ServicesPage() {
               about compliance, it is about trust. AYNA helps organizations
               treat privacy as both a core value and a competitive advantage.
               <br />
+              <br />
+
               We support clients to:
               <br />
               <br />
@@ -110,6 +117,7 @@ function ServicesPage() {
               solid architecture. AYNA helps organizations design and implement
               systems that ensure accuracy, consistency, and scalability from
               the start.
+              <br />
               <br />
               Whether you're unifying fragmented systems or preparing for
               growth, we help you:
@@ -150,6 +158,7 @@ function ServicesPage() {
               reports. We build analytical environments that connect strategy to
               insight and insight to action.
               <br />
+              <br />
               Our services include:
               <br />
               <br />
@@ -179,6 +188,7 @@ function ServicesPage() {
               clarity and intent. AYNA helps organizations demystify AI and
               implement it responsibly, unlocking value at the right pace
               <br />
+              <br />
               Our offerings include:
               <br />
               <br />
@@ -207,8 +217,13 @@ function ServicesPage() {
       chipText: "Growth & Execution",
 
       title: "Bridging Strategy and Value: From Vision to Bottom Line",
-      description:
-        "At AYNA, we don’t just help you understand your data’s potential, we help you turn it into growth, efficiency, and competitive advantage. This is where insight becomes strategy and ideas become execution. We work alongside teams across the organization to uncover monetization opportunities, drive transformation initiatives, and deliver outcomes that matter.",
+      description:<p>
+At AYNA, we don’t just help you understand your data’s potential, we help you turn it into growth, efficiency, and competitive advantage. This is where insight becomes strategy and ideas become execution.
+<br/>
+<br/> 
+ We work alongside teams across the organization to uncover monetization opportunities, drive transformation initiatives, and deliver outcomes that matter.
+      </p>
+        ,
       image: tree,
       
       FAQ: [
@@ -216,11 +231,11 @@ function ServicesPage() {
           question: "Data Monetization",
           answer: (
             <p>
-              Turning Data into Revenue, Efficiency, and Strategic Advantage
-              Data can do more than inform — it can deliver measurable value. At
+              Data can do more than inform - it can deliver measurable value. At
               AYNA, we help organizations move from insight to income by
               identifying monetization opportunities that are ethical, scalable,
               and aligned with your mission.
+              <br />
               <br />
               Our approach spans:
               <br />
@@ -252,6 +267,7 @@ function ServicesPage() {
               AYNA’s consulting team serves as your strategic partner. We help
               translate your data ambition into structured action.
               <br />
+              <br />
               We help you:
               <br />
               <br />
@@ -275,8 +291,13 @@ function ServicesPage() {
       chipText: "People & Capacity",
 
       title: "Empowering Teams to Sustain and Scale the Data Journey",
-      description:
-        "Great data strategies don’t succeed on technology alone, they succeed when people are equipped to lead and sustain them. AYNA supports clients in building the internal capacity it takes to move from dependence to ownership. We help align teams, build skillsets, and embed data-driven culture at every level.",
+      description:<p>
+Great data strategies don’t succeed on technology alone, they succeed when people are equipped to lead and sustain them.
+<br/>
+<br/> 
+ AYNA supports clients in building the internal capacity it takes to move from dependence to ownership. We help align teams, build skillsets, and embed data-driven culture at every level.
+      </p>
+        ,
            image: lightBulb,
 
       reverse: true,
@@ -288,6 +309,7 @@ function ServicesPage() {
             <p>
               We design hands-on training that demystifies data and gives teams
               the skills to lead transformation.
+              <br />
               <br />
               Our programs include:
               <br />
@@ -311,6 +333,7 @@ function ServicesPage() {
             <p>
               Talent is often the missing piece in transformation. We help you
               find and retain the people who will power your next chapter.
+              <br />
               <br />
               Our services include:
               <br />
@@ -432,14 +455,14 @@ function ServicesPage() {
               </AnimatedWrapper>
               <motion.h1
                 variants={fadeInUp(0.7, 0)} // Delay 0 for first element in stagger
-                className="text-3xl sm:text-4xl text-center md:text-5xl font-extrabold text-data-text-main leading-tight tracking-tighter mb-6"
+                className="text-3xl sm:text-4xl text-center lg:text-left md:text-5xl font-extrabold text-data-text-main leading-tight tracking-tighter mb-6"
               >
                 {service?.title}
               </motion.h1>
 
               <motion.p
                 variants={fadeInUp(0.7, 0.2)} // Staggered delay
-                className="text-base md:text-lg text-center text-data-text-muted max-w-lg mx-auto lg:mx-0 mb-8 leading-relaxed"
+                className="text-base md:text-lg text-center lg:text-left text-data-text-muted max-w-lg mx-auto lg:mx-0 mb-8 leading-relaxed"
               >
                 {service?.description}
               </motion.p>

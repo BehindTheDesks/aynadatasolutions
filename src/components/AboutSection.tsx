@@ -92,15 +92,18 @@ function AboutSection() {
               />
 
               <motion.span variants={staticTextPartVariant}>
-                Together
+                Together.
               </motion.span>
             </motion.h3>
 
             <p className="text-data-text-muted text-base sm:text-xl leading-relaxed mb-8">
-              It's particularly useful for projects that need immediate impact
-              and minimal delay, like generative AI solutions, real-time
-              analytics, and immersive user experiences. We help you deliver
-              excellence, efficiently.
+      We don’t just hand over reports or frameworks, we walk the journey with you.
+      <br/>
+      <br/>
+
+At AYNA, we partner deeply with transformation leaders across Africa to navigate complexity, build internal
+capacity, and deliver outcomes that matter. Whether it&apos;s unlocking new revenue streams, improving public trust, or
+building your AI foundation, we&apos;re in it for the long term. You bring the mission. We bring the data clarity to power it.
             </p>
             <div className="w-full flex lg:justify-start justify-center">
 

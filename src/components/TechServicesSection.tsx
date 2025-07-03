@@ -15,6 +15,7 @@ import Chip from "./Chip";
 import ServiceCard, { type Service } from "./ServiceCard";
 import Button from "./Button";
 import { useNavigate } from "react-router-dom";
+import { div } from "framer-motion/client";
 
 const size = 40
 
@@ -22,9 +23,9 @@ const size = 40
 const techServicesData: Service[] = [
   {
     id: "policy",
-    title: "Data governance, privacy, and quality",
+    title: "Data governance, privacy, & quality",
     description:
-      "Craft robust frameworks for data management, ensuring compliance, interoperability, and trust across institutions.",
+      "Craft robust frameworks for data management, ensuring compliance, interoperability, & trust across institutions.",
     IconComponent: <FiShield size={size} className="text-blue-500" />,
     bgColor: "bg-blue-200/10",
     // visualElement: <CustomPrivacyVisual />, // If you have a more complex visual
@@ -35,30 +36,30 @@ const techServicesData: Service[] = [
     id: "monetization",
     title: "Data monetization frameworks",
     description:
-      "Unlock revenue through licensing, marketplaces, and efficiency-driven models tailored for public and private sectors.",
+      "Unlock revenue through licensing, marketplaces, & efficiency-driven models tailored for public & private sectors.",
     bgColor: "bg-brand-green/10",
     IconComponent: <FaRegMoneyBillAlt size={size} className="text-brand-green" />,
     className: "hover:shadow-brand-green/50 hover:border-white/20",
     spanCols: 1,
   },
-  {
-    id: "ai",
-    title: "Advanced analytics and AI deployment",
-    description:
-      "Leverage predictive modeling, machine learning, and enterprise AI to drive smarter decisions and automation.",
-    IconComponent: (
-      <GiArtificialIntelligence size={size} className="text-purple-300" />
-    ),
-    bgColor: "bg-purple-300/10",
-    className: "hover:shadow-purple-300/50 hover:border-white/20",
-    spanCols: 1, // This card could span 2 columns if its visual is wide: lg:col-span-2
-    spanRows: 1, // This card could span 2 rows if its visual is tall: lg:row-span-2
-  },
+  // {
+  //   id: "ai",
+  //   title: "Advanced analytics & AI deployment",
+  //   description:
+  //     "Leverage predictive modeling, machine learning, & enterprise AI to drive smarter decisions & automation.",
+  //   IconComponent: (
+  //     <GiArtificialIntelligence size={size} className="text-purple-300" />
+  //   ),
+  //   bgColor: "bg-purple-300/10",
+  //   className: "hover:shadow-purple-300/50 hover:border-white/20",
+  //   spanCols: 1, // This card could span 2 columns if its visual is wide: lg:col-span-2
+  //   spanRows: 1, // This card could span 2 rows if its visual is tall: lg:row-span-2
+  // },
   {
     id: "capacity",
-    title: "Capacity building and AI training",
+    title: "Capacity building ",
     description:
-      "Empower your team with AI literacy, data stewardship certifications, and tailored digital transformation training.",
+      "Empower your team with data stewardship certifications, & tailored digital transformation training.",
     IconComponent: <GiStumpRegrowth size={size} className="text-red-500" />,
     bgColor: "bg-purple-500/10",
     className: "hover:shadow-red-300/50 hover:border-white/20",
@@ -73,8 +74,8 @@ const techServicesData: Service[] = [
     //                 key={i}
     //                 className="absolute h-px bg-tech-accent-glow/30"
     //                 initial={{ width: 0, left: `${20 + i*10}%` }}
-    //                 animate={{ width: `${30 + Math.random()*30}%` }}
-    //                 transition={{ duration: 1.5 + Math.random(), delay: i * 0.2 + 0.5, ease:'circOut' }}
+    //                 animate={{ width: `${30 + Math.r&om()*30}%` }}
+    //                 transition={{ duration: 1.5 + Math.r&om(), delay: i * 0.2 + 0.5, ease:'circOut' }}
     //                 style={{ top: `${20 + i * 15}%` }}
     //             />
     //         ))}
@@ -84,9 +85,9 @@ const techServicesData: Service[] = [
   },
   {
     id: "talent",
-    title: "Tech talent sourcing and placement",
+    title: "Tech talent sourcing & placement",
     description:
-      "Access vetted tech professionals and build workforce readiness for your digital transformation journey.",
+      "Access vetted tech professionals & build workforce readiness for your digital transformation journey.",
     IconComponent: <LiaLightbulb size={size} className="text-brand-yellow" />,
     bgColor: "bg-brand-yellow/10",
     className: "hover:shadow-brand-yellow/50 hover:border-white/20",
@@ -98,7 +99,7 @@ const techServicesData: Service[] = [
     id: "strategy",
     title: "Strategy consulting",
     description:
-      "Align vision, innovate business models, and execute with precision through ecosystem mapping and stakeholder engagement.",
+      "Align vision, innovate business models, & execute with precision through ecosystem mapping & stakeholder engagement.",
     IconComponent: <FaChess size={size} className="text-white" />,
     bgColor: "bg-white/10",
     className: "hover:shadow-white/50 hover:border-white/20",
@@ -171,10 +172,13 @@ function TechServicesSection() {
         {/* Use a more flexible grid that allows for spanning */}
         <AnimatedWrapper
           variants={staggerContainer(0.15, 0.2)}
-          className="grid grid-cols-1 md:grid-cols-2  gap-6 md:gap-8" // Base grid
+          className="grid grid-cols-1 md:grid-cols-2   gap-6 md:gap-8" // Base grid
         >
-          {techServicesData.map((service) => (
+          {techServicesData.map((service, index) => (
+            <div className={`${index === techServicesData.length - 1 ? "place-items-center  col-span-2" : "" } `}>
             <ServiceCard key={service.id} service={service} />
+
+            </div>
           ))}
         </AnimatedWrapper>
 

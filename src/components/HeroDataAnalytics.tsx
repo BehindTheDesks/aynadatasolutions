@@ -13,6 +13,7 @@ import AnimatedHighlightedWord from "./AnimatedHighlightedWord";
 import Button from "./Button";
 import { useNavigate } from "react-router-dom";
 import GridPattern from "./GridPattern";
+import { FiArrowRight } from "react-icons/fi";
 
 // ... (headline splitting logic remains the same)
 const staticTextPartVariant = fadeInUp(0.7);
@@ -87,13 +88,20 @@ function HeroDataAnalytics() {
             </motion.p>
 
             <motion.div
-              className="w-full flex justify-center lg:justify-start items-center lg:items-start"
+              className="w-full flex justify-center flex-col lg:flex-row gap-8 lg:justify-start items-center lg:items-start"
               variants={fadeInUp(0.7, 0.3)}
             >
               <Button
                 label="Let’s Talk"
                 onClick={() => navigate("/contact")}
               />
+<Button
+                label="Explore Our Work"
+                backgroundColor="bg-brand-yellow"
+                textColor="text-data-text-main"
+                onClick={() => navigate("/services")}
+              />
+              
             </motion.div>
           </AnimatedWrapper>
           {/* Floating Data Objects Area - DESKTOP (lg screens and up) */}
