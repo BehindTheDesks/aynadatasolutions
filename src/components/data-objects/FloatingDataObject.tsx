@@ -62,7 +62,7 @@ export const DataCircleDots: React.FC<{
   size = "w-24 h-24",
   imageSrc,
   alt = "Data Image",
-  colorClass = "bg-data-secondary",
+  colorClass = "bg-brand-yellow",
 }) => (
   <div
     className={`${size} ${colorClass} relative rounded-full overflow-hidden shadow-lg`}
