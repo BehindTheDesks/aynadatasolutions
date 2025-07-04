@@ -8,15 +8,16 @@ import FloatingImage from "../components/FloatingImage";
 import Button from "../components/Button";
 import { useNavigate } from "react-router-dom";
 import { AnimatedSVG } from "../components/AnimatedAfricaSvg";
-import shield from "../assets/images/shield.png";
-import money from "../assets/images/money.png";
-import ai from "../assets/images/robot.png";
-import tree from "../assets/images/tree.png";
-import lightBulb from "../assets/images/light-bulb.png";
-import chess from "../assets/images/chess.png";
+
 import Chip from "../components/Chip";
 import FAQItem from "../components/FAQItem";
-import { p } from "framer-motion/client";
+import dataQualityImage from "../assets/images/data-quality.jpg"
+import automationImage from "../assets/images/automation-image-2.jpg"
+import monetizationStrategyImage from "../assets/images/monetization-startegy-1.jpg"
+import trainingImage from "../assets/images/training.jpg"
+
+
+
 
 // Placeholder images - update these paths
 // const aboutImage1 = "/images/about/team-dynamic.jpg";
@@ -54,7 +55,7 @@ function ServicesPage() {
           cross-functional clarity.
         </p>
       ),
-      image: shield,
+      image: dataQualityImage,
       FAQ: [
         {
           question: "Data Governance",
@@ -159,7 +160,7 @@ function ServicesPage() {
         </p>
       ),
 
-      image: ai,
+      image: automationImage,
 
       reverse: true,
 
@@ -243,7 +244,7 @@ function ServicesPage() {
           deliver outcomes that matter.
         </p>
       ),
-      image: tree,
+      image: monetizationStrategyImage,
 
       FAQ: [
         {
@@ -321,7 +322,7 @@ function ServicesPage() {
           skillsets, and embed data-driven culture at every level.
         </p>
       ),
-      image: lightBulb,
+      image: trainingImage,
 
       reverse: true,
 
