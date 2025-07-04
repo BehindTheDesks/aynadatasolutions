@@ -37,8 +37,8 @@ const scrollToSection = (id: string, onScrolled?: () => void) => {
 // Navigation links data
 const mainNavLinks: navType[] = [
   { name: "Home", to: "", isSection: false }, // Ensure this ID matches your Hero section's wrapper
-  { name: "About", to: "about", isSection: false },
-  { name: "Services", to: "services", isSection: false },
+  { name: "About Us", to: "about", isSection: false },
+  { name: "Our Solutions", to: "services", isSection: false },
 
   // { name: 'Contact', to: 'contact', isSection: false },
 ];

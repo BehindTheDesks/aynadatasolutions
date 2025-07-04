@@ -40,7 +40,7 @@ const BuildWith: React.FC<StackingGridProps> = ({
           trigger: componentRef.current,
           start: "top 70%",
           end: "bottom center",
-          toggleActions: "restart reverse restart reverse",
+          toggleActions: "play none none none",
 
           // markers: true, // Uncomment for debugging
         },
@@ -75,7 +75,7 @@ const BuildWith: React.FC<StackingGridProps> = ({
     <section
       id="global-network"
       ref={componentRef}
-      className=" bg-data-dark-bg text-global-text-primary relative overflow-hidden mt-14"
+      className=" bg-data-dark-bg text-global-text-primary relative overflow-hidden pt-24"
     >
       <GridPattern />
       <StackingGrid className="lg:hidden "/>

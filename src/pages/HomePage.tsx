@@ -17,9 +17,13 @@ function HomePage() {
       <AboutSection /> {/* Add the new section */}
 
       <TechServicesSection />
+      
       <BriefSection/>
       {/* <GlobalNetworkSection />  */}
+      <div className="pt-20 lg:pt-0">
       <BuildWith/>
+
+      </div>
       <SolutionsSection/>
       <div className="h-[300px] w-full"></div>
       {/* <PortfolioSectionV2 /> 

@@ -47,8 +47,8 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
       variants={cardVariant}
       className={`relative ${colSpanClass} ${rowSpanClass} 
                   bg-tech-card-bg backdrop-blur-md border border-tech-card-border 
-                  rounded-card-tech p-6 sm:p-8 shadow-card-tech-main max-w-[25rem]
-                  flex flex-col overflow-hidden group
+                  rounded-card-tech p-3 sm:p-4 h-24 shadow-card-tech-main md:max-w-[25rem] 
+                  flex flex-col justify-center items-center overflow-hidden group
                   transition-all duration-300 ease-out  ${service?.className} ${className}`}
     >
       {/* Optional: Subtle background gradient/pattern inside card */}
@@ -56,8 +56,8 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
         className={`absolute inset-0 ${service?.bgGradient}  opacity-30  group-hover:opacity-50 transition-opacity duration-300 -z-10`}
       ></div>
 
-      <div className="flex-shrink-0  flex gap-4 items-center justify-start">
-        <div className="mt-auto flex-shrink-0 h-14 relative flex items-center justify-center">
+      <div className="flex-shrink-0 relative  flex  gap-4 items-center justify-center">
+        <div className="mt-auto flex-shrink-0 absolute h-14 z-10 opacity-20  translate-x-[100px] flex items-center justify-center">
           {service.visualElement ? (
             service.visualElement
           ) : (
@@ -69,7 +69,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
             </motion.div>
           )}
         </div>
-        <h3 className="text-lg sm:text-xl font-semibold capitalize text-tech-text-primary leading-tight">
+        <h3 className="text-lg font-semibold capitalize text-center text-tech-text-primary leading-tight z-20">
           {service.title}
         </h3>
       </div>

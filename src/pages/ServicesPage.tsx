@@ -44,10 +44,16 @@ function ServicesPage() {
     {
       chipText: "Foundation & Trust",
       title: "Laying the Groundwork for Trusted, Actionable Data",
-      description: <p>
-Before data can deliver insight, value, or innovation, it must be trusted. That trust begins with how it is governed, protected, structured, and shared.<br/> <br/> At AYNA, we help organizations build resilient data foundations that inspire confidence, ensure compliance, and unlock cross-functional clarity.
-      </p>
-        ,
+      description: (
+        <p>
+          Before data can deliver insight, value, or innovation, it must be
+          trusted. That trust begins with how it is governed, protected,
+          structured, and shared.
+          <br /> <br /> At AYNA, we help organizations build resilient data
+          foundations that inspire confidence, ensure compliance, and unlock
+          cross-functional clarity.
+        </p>
+      ),
       image: shield,
       FAQ: [
         {
@@ -60,7 +66,6 @@ Before data can deliver insight, value, or innovation, it must be trusted. That 
               strategic decisions and operational effectiveness.
               <br />
               <br />
-
               Whether you're a public agency connecting siloed systems or a
               growing enterprise navigating complexity, we support you to:
               <br />
@@ -88,7 +93,6 @@ Before data can deliver insight, value, or innovation, it must be trusted. That 
               treat privacy as both a core value and a competitive advantage.
               <br />
               <br />
-
               We support clients to:
               <br />
               <br />
@@ -143,8 +147,18 @@ Before data can deliver insight, value, or innovation, it must be trusted. That 
       chipText: "Intelligence & Automation",
 
       title: "Transforming Data into Direction, Clarity, and Competitive Edge",
-      description:
-        "Data becomes truly valuable when it sharpens your ability to see clearly, act decisively, and adapt quickly. AYNA helps public and private institutions move from spreadsheets and static dashboards to real-time intelligence and predictive systems; grounded in context, driven by purpose",
+      description: (
+        <p>
+          Data becomes truly valuable when it sharpens your ability to see
+          clearly, act decisively, and adapt quickly.
+          <br />
+          <br />
+          AYNA helps public and private institutions move from spreadsheets and
+          static dashboards to real-time intelligence and predictive systems;
+          grounded in context, driven by purpose
+        </p>
+      ),
+
       image: ai,
 
       reverse: true,
@@ -217,15 +231,20 @@ Before data can deliver insight, value, or innovation, it must be trusted. That 
       chipText: "Growth & Execution",
 
       title: "Bridging Strategy and Value: From Vision to Bottom Line",
-      description:<p>
-At AYNA, we don’t just help you understand your data’s potential, we help you turn it into growth, efficiency, and competitive advantage. This is where insight becomes strategy and ideas become execution.
-<br/>
-<br/> 
- We work alongside teams across the organization to uncover monetization opportunities, drive transformation initiatives, and deliver outcomes that matter.
-      </p>
-        ,
+      description: (
+        <p>
+          At AYNA, we don’t just help you understand your data’s potential, we
+          help you turn it into growth, efficiency, and competitive advantage.
+          This is where insight becomes strategy and ideas become execution.
+          <br />
+          <br />
+          We work alongside teams across the organization to uncover
+          monetization opportunities, drive transformation initiatives, and
+          deliver outcomes that matter.
+        </p>
+      ),
       image: tree,
-      
+
       FAQ: [
         {
           question: "Data Monetization",
@@ -291,14 +310,18 @@ At AYNA, we don’t just help you understand your data’s potential, we help yo
       chipText: "People & Capacity",
 
       title: "Empowering Teams to Sustain and Scale the Data Journey",
-      description:<p>
-Great data strategies don’t succeed on technology alone, they succeed when people are equipped to lead and sustain them.
-<br/>
-<br/> 
- AYNA supports clients in building the internal capacity it takes to move from dependence to ownership. We help align teams, build skillsets, and embed data-driven culture at every level.
-      </p>
-        ,
-           image: lightBulb,
+      description: (
+        <p>
+          Great data strategies don’t succeed on technology alone, they succeed
+          when people are equipped to lead and sustain them.
+          <br />
+          <br />
+          AYNA supports clients in building the internal capacity it takes to
+          move from dependence to ownership. We help align teams, build
+          skillsets, and embed data-driven culture at every level.
+        </p>
+      ),
+      image: lightBulb,
 
       reverse: true,
 
@@ -338,7 +361,8 @@ Great data strategies don’t succeed on technology alone, they succeed when peo
               Our services include:
               <br />
               <br />
-              • Permanent and contract placements for data, engineering, and analytics roles.
+              • Permanent and contract placements for data, engineering, and
+              analytics roles.
               <br />
               • Talent pipelines aligned with your strategy.
               <br />

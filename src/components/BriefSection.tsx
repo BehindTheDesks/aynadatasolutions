@@ -47,7 +47,7 @@ function BriefSection() {
   return (
     <section
       id="brief"
-      className=" bg-data-dark-bg relative overflow-hidden mt-14 "
+      className=" bg-data-dark-bg relative overflow-hidden pt-40 "
     >
       <GridPattern />
 
