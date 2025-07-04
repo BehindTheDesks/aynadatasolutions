@@ -11,10 +11,11 @@ import AnimatedHighlightedWord from "./AnimatedHighlightedWord";
 import GridPattern from "./GridPattern";
 
 import FloatingImage from "./FloatingImage";
-import aboutImage1 from "../assets/images/team-dynamic.jpg";
 import aboutImage2 from "../assets/images/creative-process.jpg";
 import aboutImage3 from "../assets/images/office-vibe.jpg";
 import aboutImage4 from "../assets/images/data-visualization-abstract.jpg";
+import automationImage from "../assets/images/automation-image-1.jpg";
+
 import Button from "./Button";
 import { useNavigate } from "react-router-dom";
 
@@ -121,7 +122,7 @@ building your AI foundation, we&apos;re in it for the long term. You bring the m
             {/* Note: pointer-events-none on parent can be tricky if images should be clickable later */}
             {/* Image 1 - Largest, slightly back */}
             <FloatingImage
-              src={aboutImage1}
+              src={automationImage}
               alt="Dynamic team working"
               className="w-[60%] sm:w-[55%] md:w-[280px] lg:w-[320px] top-[5%] left-[10%] lg:left-[5%] z-10"
               rotate={-5}

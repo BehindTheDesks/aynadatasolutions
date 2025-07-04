@@ -14,6 +14,17 @@ import Button from "./Button";
 import { useNavigate } from "react-router-dom";
 import GridPattern from "./GridPattern";
 import { FiArrowRight } from "react-icons/fi";
+import worldMoneyData from "../assets/images/world-money-data.jpg";
+import africa from "../assets/images/home-africa.jpg";
+import humanAi from "../assets/images/human-ai.jpg";
+import farmerAuto from "../assets/images/farmer-auto.jpg";
+import dataWoman from "../assets/images/data-woman.jpg";
+import dataTransform from "../assets/images/data-transform.jpg";
+import dataMarket from "../assets/images/data-Market.jpg"
+
+
+
+
 
 // ... (headline splitting logic remains the same)
 const staticTextPartVariant = fadeInUp(0.7);
@@ -39,7 +50,7 @@ function HeroDataAnalytics() {
             className="text-center lg:text-left relative z-10 order-2 lg:order-1 py-8 lg:py-0 lg:pb-24"
           >
             <motion.div variants={fadeInUp(0.6)} className="mb-4">
-              <span className="inline-block bg-data-secondary/20 text-data-secondary text-xs sm:text-sm font-semibold px-3 py-1 rounded-full">
+              <span className="inline-block bg-data-secondary/20 text-data-secondary text-sm sm:text-lg font-semibold px-3 py-1 rounded-full">
                 ✨ DATA-DRIVEN RESULTS
               </span>
             </motion.div>
@@ -91,17 +102,13 @@ function HeroDataAnalytics() {
               className="w-full flex justify-center flex-col lg:flex-row gap-8 lg:justify-start items-center lg:items-start"
               variants={fadeInUp(0.7, 0.3)}
             >
+              <Button label="Let’s Talk" onClick={() => navigate("/contact")} />
               <Button
-                label="Let’s Talk"
-                onClick={() => navigate("/contact")}
-              />
-<Button
                 label="Explore Our Work"
                 backgroundColor="bg-brand-yellow"
                 textColor="text-data-text-main"
                 onClick={() => navigate("/services")}
               />
-              
             </motion.div>
           </AnimatedWrapper>
           {/* Floating Data Objects Area - DESKTOP (lg screens and up) */}
@@ -115,10 +122,10 @@ function HeroDataAnalytics() {
               initialX={-60}
               initialY={-20}
             >
-              <DataCircleDots
-                size="w-36 h-36 sm:w-44 sm:h-44"
-                colorClass="bg-data-secondary opacity-90"
-              />
+              <DataCircleDots size="w-32 h-32" imageSrc={worldMoneyData}>
+              </DataCircleDots>
+
+              
             </FloatingDataObject>
             <FloatingDataObject
               floatDelay={0.3}
@@ -126,11 +133,12 @@ function HeroDataAnalytics() {
               initialY={60}
               initialX={-30}
             >
-              <DataPillShape
-                width="w-60 sm:w-72"
-                height="h-24 sm:h-28"
-                colorClass="bg-data-primary opacity-75"
-              />
+              
+              <DataCircleDots
+                size="w-60 h-24 sm:w-72 sm:h-28"
+                imageSrc={africa}
+              >
+              </DataCircleDots>
             </FloatingDataObject>
             <FloatingDataObject
               floatDelay={0.2}
@@ -138,16 +146,22 @@ function HeroDataAnalytics() {
               initialX={60}
               initialY={-30}
             >
-              <DataBarSegments
+              <DataCircleDots
                 size="w-28 h-44 sm:w-32 sm:h-52"
-                colorClass="bg-data-accent opacity-85"
-              />
+                imageSrc={humanAi}
+              >
+              </DataCircleDots>
             </FloatingDataObject>
             <FloatingDataObject
               floatDelay={0.5}
               className="top-[30%] left-[45%] transform -translate-x-1/2"
               initialY={-40}
             >
+              <DataCircleDots
+                size="w-28 h-44 sm:w-32 sm:h-52"
+                imageSrc={farmerAuto}
+              >
+              </DataCircleDots>
               <DataConcentricCircles
                 size="w-28 h-28 sm:w-32 sm:h-32"
                 colorClass="border-data-primary opacity-60"
@@ -159,52 +173,45 @@ function HeroDataAnalytics() {
               initialY={60}
               initialX={40}
             >
+
+              <DataCircleDots
+                size="w-28 h-44 sm:w-32 sm:h-52"
+                imageSrc={dataWoman}
+              >
+              </DataCircleDots>
               <DataCircleDots
                 size="w-24 h-24 sm:w-28 sm:h-28"
                 colorClass="bg-data-accent opacity-70"
               />
             </FloatingDataObject>
-            <FloatingDataObject
-              floatDelay={0.4}
-              className="bottom-[30%] right-[0%]"
-              initialX={50}
-            >
-              <DataPillShape
-                width="w-40 sm:w-48"
-                height="h-16 sm:h-20"
-                colorClass="bg-data-secondary opacity-60"
-              />
-            </FloatingDataObject>
+            
             <FloatingDataObject
               floatDelay={0.6}
               className="top-[60%] left-[20%]"
               initialY={30}
             >
-              <DataBarSegments
-                size="w-16 h-28 sm:w-20 sm:h-32"
-                colorClass="bg-data-primary opacity-50"
-              />
+                 <DataCircleDots
+                size="w-28 h-44 sm:w-32 sm:h-52"
+                imageSrc={dataTransform}
+              >
+              </DataCircleDots>
+            
             </FloatingDataObject>
-            <FloatingDataObject
-              floatDelay={0.8}
-              className="bottom-[45%] left-[55%]"
-              initialX={-20}
-            >
-              <DataPillShape
-                width="w-20"
-                height="h-10"
-                colorClass="bg-data-accent opacity-70"
-              />
-            </FloatingDataObject>
+            
             <FloatingDataObject
               floatDelay={0.9}
-              className="top-[5%] right-[40%]"
+              className="top-[-4%] right-[40%]"
               initialY={-20}
             >
-              <DataConcentricCircles
+                  <DataCircleDots
+                size="w-28 h-44 sm:w-32 sm:h-52"
+                imageSrc={dataMarket}
+              >
+              </DataCircleDots>
+              {/* <DataConcentricCircles
                 size="w-20 h-20"
                 colorClass="border-data-secondary opacity-40"
-              />
+              /> */}
             </FloatingDataObject>
             <FloatingDataObject
               floatDelay={1.0}
@@ -241,10 +248,12 @@ function HeroDataAnalytics() {
               initialX={-30}
               initialY={-20}
             >
-              <DataCircleDots
+                      <DataCircleDots
                 size="w-20 h-20"
-                colorClass="bg-data-secondary/60"
-              />
+                imageSrc={dataMarket}
+              >
+              </DataCircleDots>
+           
             </FloatingDataObject>
             <FloatingDataObject
               floatDelay={0.4}
@@ -252,11 +261,13 @@ function HeroDataAnalytics() {
               initialX={30}
               initialY={-15}
             >
-              <DataPillShape
-                width="w-28"
-                height="h-12"
-                colorClass="bg-data-accent/50"
-              />
+
+                          <DataCircleDots
+                size="w-28 h-12"
+                imageSrc={humanAi}
+              >
+              </DataCircleDots>
+        
             </FloatingDataObject>
             <FloatingDataObject
               floatDelay={0.6}
@@ -264,10 +275,13 @@ function HeroDataAnalytics() {
               initialY={30}
               initialX={-20}
             >
-              <DataBarSegments
+
+                       <DataCircleDots
                 size="w-16 h-24"
-                colorClass="bg-data-primary/50"
-              />
+                imageSrc={dataWoman}
+              >
+              </DataCircleDots>
+         
             </FloatingDataObject>
             <FloatingDataObject
               floatDelay={0.8}
@@ -275,10 +289,13 @@ function HeroDataAnalytics() {
               initialY={25}
               initialX={20}
             >
-              <DataConcentricCircles
+
+                   <DataCircleDots
                 size="w-24 h-24"
-                colorClass="border-data-secondary/40"
-              />
+                imageSrc={africa}
+              >
+              </DataCircleDots>
+          
             </FloatingDataObject>
           </div>
         </div>

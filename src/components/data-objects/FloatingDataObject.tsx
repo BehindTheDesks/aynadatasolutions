@@ -1,9 +1,9 @@
 // src/components/data-objects/FloatingDataObject.tsx
-import React from 'react';
+import React, { Children } from 'react';
 import { motion,type MotionProps } from 'framer-motion';
 
 interface FloatingDataObjectProps extends MotionProps {
-  children: React.ReactNode;
+  children?: React.ReactNode;
   className?: string;
   floatDelay?: number; // For staggered floating
   initialX?: number | string;
@@ -51,15 +51,36 @@ const FloatingDataObject: React.FC<FloatingDataObjectProps> = ({
 };
 
 // Example Data Objects
-export const DataCircleDots: React.FC<{ size?: string; colorClass?: string }> = ({ size = "w-24 h-24", colorClass = "bg-data-secondary" }) => (
-  <div className={`${size} ${colorClass} rounded-full p-3 sm:p-4 flex items-center justify-center opacity-80 shadow-lg`}>
-    <div className="grid grid-cols-4 gap-1 sm:gap-1.5">
-      {Array.from({ length: 16 }).map((_, i) => (
-        <div key={i} className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-white/70 rounded-full"></div>
-      ))}
+export const DataCircleDots: React.FC<{
+  size?: string;
+  imageSrc?: string;
+  alt?: string;
+  colorClass?: string;
+  children?: React.ReactNode;
+}> = ({
+  children,
+  size = "w-24 h-24",
+  imageSrc,
+  alt = "Data Image",
+  colorClass = "bg-data-secondary",
+}) => (
+  <div
+    className={`${size} ${colorClass} relative rounded-full overflow-hidden shadow-lg`}
+  >
+    {imageSrc && (
+      <img
+        src={imageSrc}
+        alt={alt}
+        className="absolute inset-0 w-full h-full object-cover"
+      />
+    )}
+
+    <div className="relative z-10 p-3 sm:p-4 flex items-center justify-center opacity-90">
+      {children}
     </div>
   </div>
 );
+
 
 export const DataBarSegments: React.FC<{ size?: string; colorClass?: string }> = ({ size = "w-20 h-32", colorClass = "bg-data-primary" }) => (
   <div className={`${size} ${colorClass} rounded-2xl p-2 sm:p-3 flex flex-col justify-end space-y-1 sm:space-y-1.5 opacity-80 shadow-lg`}>
