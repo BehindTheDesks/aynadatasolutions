@@ -68,16 +68,16 @@ function HeroDataAnalytics() {
                 className="mx-1"
               />
               <motion.span variants={staticTextPartVariant}>Into </motion.span>
-              <br />
               <AnimatedHighlightedWord
                 word="Value. "
                 highlightColorClass="bg-yellow-200/50" // Example different highlight
                 textColorClass="text-brand-yellow"
                 className="mx-1"
               />
+              <br/>
 
               <motion.span variants={staticTextPartVariant}>
-                &nbsp; At{" "}
+                At{" "}
               </motion.span>
               <AnimatedHighlightedWord
                 word="Scale. "

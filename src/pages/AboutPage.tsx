@@ -58,21 +58,9 @@ const Section1 = () => {
         variants={staggerContainer(0.25, 0.1)}
         className="text-center lg:text-left lg:h-[600px]  relative z-10 order-1 lg:order-1 "
       >
-        <motion.h1
+            <motion.h1
           variants={fadeInUp(0.7, 0)} // Delay 0 for first element in stagger
-          className="text-6xl sm:text-7xl md:text-8xl font-extrabold text-data-text-main leading-tight tracking-tighter mb-6"
-        >
-          About&nbsp;
-          <AnimatedHighlightedWord
-            word="AYNA "
-            highlightColorClass="bg-yellow-300/50" // Example different highlight
-            textColorClass="text-brand-yellow" // Ensure data-accent is defined
-            className="mx-1"
-          />
-        </motion.h1>
-        <motion.h1
-          variants={fadeInUp(0.7, 0)} // Delay 0 for first element in stagger
-          className="text-3xl sm:text-4xl md:text-6xl font-extrabold text-data-text-main leading-tight tracking-tighter mb-6"
+          className="text-4xl sm:text-6xl md:text-7xl font-extrabold text-data-text-main leading-tight tracking-tighter mb-14"
         >
           <AnimatedHighlightedWord
             word="Clarity"
@@ -97,9 +85,23 @@ const Section1 = () => {
           .
         </motion.h1>
 
+        <motion.h1
+          variants={fadeInUp(0.7, 0)} // Delay 0 for first element in stagger
+          className="text-3xl sm:text-4xl md:text-6xl font-extrabold text-data-text-main leading-tight tracking-tighter "
+        >
+          About&nbsp;
+          <AnimatedHighlightedWord
+            word="AYNA "
+            highlightColorClass="bg-yellow-300/50" // Example different highlight
+            textColorClass="text-brand-yellow" // Ensure data-accent is defined
+            className="mx-1"
+          />
+        </motion.h1>
+    
+
         <motion.p
           variants={fadeInUp(0.7, 0.2)} // Staggered delay
-          className="text-base sm:text-lg md:text-xl text-data-text-muted font-light max-w-lg mx-auto lg:mx-0 lg:mt-10 leading-relaxed"
+          className="text-base sm:text-lg md:text-xl text-data-text-muted font-light max-w-lg mx-auto lg:mx-0 lg:mt-5 leading-relaxed"
         >
           At AYNA, we help organizations unlock the full value of their data:
           from foundational governance to intelligent monetization.

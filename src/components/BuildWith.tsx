@@ -103,7 +103,7 @@ const BuildWith: React.FC<StackingGridProps> = ({
             className="text-4xl sm:text-5xl md:text-6xl text-center font-extrabold text-data-text-main leading-tight tracking-tighter mb-6"
           >
             {/* Compose the headline */}
-            <motion.span variants={fadeInUp(0.7)}>Let&apos;&nbsp;</motion.span>
+            <motion.span variants={fadeInUp(0.7)}>Let&apos;s&nbsp;</motion.span>
             <AnimatedHighlightedWord
               word="Build"
               highlightColorClass="bg-yellow-300/40" // Example different highlight

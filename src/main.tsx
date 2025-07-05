@@ -14,6 +14,7 @@ import ServicesPage from "./pages/ServicesPage.tsx";
 import { isProduction } from "./hooks/helper.ts";
 import NotFound from "./components/NotFound.tsx";
 import ComingSoonPage from "./pages/ComingSoonPage.tsx";
+import { Toaster } from 'react-hot-toast';
 
 const productionRoutes: RouteObject[] = [
       {
@@ -66,6 +67,7 @@ const router = createBrowserRouter([
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
+    <Toaster position="top-center" reverseOrder={false} />
     <RouterProvider router={router} />
   </StrictMode>
 );

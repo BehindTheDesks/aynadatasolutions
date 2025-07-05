@@ -411,15 +411,20 @@ function ServicesPage() {
               variants={fadeInUp(0.7, 0)} // Delay 0 for first element in stagger
               className="text-4xl sm:text-6xl md:text-7xl font-extrabold text-data-text-main leading-tight tracking-tighter mb-6"
             >
-              What &nbsp;
+              Powering &nbsp;
               <AnimatedHighlightedWord
-                word="Services "
+                word="Smarter "
                 highlightColorClass="bg-yellow-300/50" // Example different highlight
-                textColorClass="text-data-accent" // Ensure data-accent is defined
+                textColorClass="text-brand-yellow" // Ensure data-accent is defined
                 className="mx-1"
               />{" "}
-              <br className="" />
-              Do We Offer
+              {/* <br className="" /> */}
+              Outcomes With    <AnimatedHighlightedWord
+                word="Data "
+                highlightColorClass="bg-yellow-300/50" // Example different highlight
+                textColorClass="text-brand-yellow" // Ensure data-accent is defined
+                className="mx-1"
+              />{" "}
             </motion.h1>
 
             <motion.p

@@ -43,7 +43,7 @@ const mainNavLinks: navType[] = [
   // { name: 'Contact', to: 'contact', isSection: false },
 ];
 
-const navLinks = isProduction() ? [] : mainNavLinks
+const navLinks = isProduction() ? [] : mainNavLinks;
 
 // Animation variants for links (optional, can be done with Tailwind hover too)
 const linkVariants = {
@@ -63,6 +63,8 @@ function Navbar() {
   const navigate = useNavigate();
 
   const isHomePage = location.pathname === "/";
+  const isContactPage = location.pathname === "/contact";
+
 
   useEffect(() => {
     const handleScroll = () => {
@@ -159,25 +161,22 @@ function Navbar() {
                   // If not on homepage but it's a section link, navigate then scroll is more complex
                 }}
               >
-                <motion.span
-                  variants={linkVariants}
-                  whileHover="hover"
-                  whileTap="tap"
-                  className={`font-medium transition-colors duration-200 text-lg text-data-text-main lg:text-base 
-                                ${
-                                  isScrolled || isMobileMenuOpen
-                                    ? "hover:text-brand-yellow"
-                                    : "hover:text-brand-yellow"
-                                }`}
-                >
-                  {link.name}
-                </motion.span>
+                 <motion.span
+    variants={linkVariants}
+    className={`font-medium  duration-500 text-lg transition-all  ${
+      location.pathname === `/${link.to}` ? "bg-brand-yellow p-4 text-data-dark-bg " : "text-data-text-main hover:text-brand-yellow"
+    } rounded-full  lg:text-base `}
+  >
+    {link.name}
+  </motion.span>
               </RouterLink>
             )
           )}
 
           <Button
             label="Contact Us"
+            backgroundColor={` ${isContactPage ? "bg-brand-yellow" : "bg-data-text-main"} `}
+
             onClick={() => navigate("/contact")}
             size="sm"
           />
@@ -185,22 +184,22 @@ function Navbar() {
 
         {/* Mobile Navigation Toggle */}
         <div className="md:hidden">
-          {
-            navLinks.length > 0 && <button
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className={`focus:outline-none p-1 rounded 
+          {navLinks.length > 0 && (
+            <button
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              className={`focus:outline-none p-1 rounded 
                         ${
                           isScrolled || isMobileMenuOpen
                             ? "text-data-text-main hover:text-brand-accent"
                             : "text-data-text-main hover:text-brand-accent"
                         }`}
-            // aria-label="Toggle menu"
-            // aria-expanded={isMobileMenuOpen}
-          >
-            {isMobileMenuOpen ? <FiX size={26} /> : <FiMenu size={26} />}
-          </button>
-          }
-          
+              // aria-label="Toggle menu"
+              // aria-expanded={isMobileMenuOpen}
+            >
+              {isMobileMenuOpen ? <FiX size={26} /> : <FiMenu size={26} />}
+            </button>
+          )}
+
           {/* <Button label='Reach Out Now' onClick={() => navigate("/contact")}  iconOnly/> */}
         </div>
       </div>

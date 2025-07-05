@@ -22,7 +22,7 @@ const FAQItem: React.FC<FAQItemProps> = ({ question, answer, defaultOpen = false
     <div className="bg-[#1a1a2e] rounded-md overflow-hidden shadow-md mb-4 transition-all duration-300 ease-in-out">
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="w-full text-xl px-4 py-3 flex justify-between items-center text-left bg-brand-yellow text-white font-semibold focus:outline-none"
+        className="w-full text-xl px-4 py-3 flex justify-between items-center text-left bg-brand-yellow text-data-dark-bg font-semibold focus:outline-none"
       >
         <span>{question}</span>
         <span>{isOpen ? <FiMinus /> : <FiPlus />}</span>
