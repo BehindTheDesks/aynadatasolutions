@@ -22,7 +22,7 @@ const ImageSlider: React.FC<ImageSliderProps> = ({
 }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const isVertical = direction === 'vertical';
-  const intervalRef = useRef<number | null>(null);
+  const intervalRef = useRef<number | undefined>(undefined);
 
   const goToIndex = (index: number) => {
     setCurrentIndex(index);
@@ -32,23 +32,21 @@ const ImageSlider: React.FC<ImageSliderProps> = ({
   const nextSlide = () => {
     setCurrentIndex((prev) => (prev + 1) % images.length);
   };
+const resetAutoScroll = () => {
+  if (scrollInterval && intervalRef.current) {
+    clearInterval(intervalRef.current);
+    intervalRef.current = setInterval(nextSlide, scrollInterval) as unknown as number;
+  }
+};
+useEffect(() => {
+  if (scrollInterval) {
+    intervalRef.current = setInterval(nextSlide, scrollInterval) as unknown as number;
+  }
 
-  const resetAutoScroll = () => {
-    if (scrollInterval && intervalRef.current) {
-      clearInterval(intervalRef.current);
-      intervalRef.current = setInterval(nextSlide, scrollInterval);
-    }
+  return () => {
+    if (intervalRef.current) clearInterval(intervalRef.current);
   };
-
-  useEffect(() => {
-    if (scrollInterval) {
-      intervalRef.current = setInterval(nextSlide, scrollInterval);
-    }
-
-    return () => {
-      if (intervalRef.current) clearInterval(intervalRef.current);
-    };
-  }, [scrollInterval]);
+}, [scrollInterval]);
 
   return (
     <div
