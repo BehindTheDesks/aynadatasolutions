@@ -190,7 +190,7 @@ function BriefSection() {
               />
             </div>
 
-            <div className="w-[80%] h-14 flex justify-between overflow-hidden border border-white rounded-full mt-7">
+            <div className="w-full lg:w-[80%] h-14 flex justify-between overflow-hidden border border-white rounded-full mt-7">
               <input
                 type="text"
                 aria-label="subscribe"
