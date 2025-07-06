@@ -1,5 +1,5 @@
 // src/components/AboutSection.tsx
-import React from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { AnimatedWrapper } from "./AnimatedWrapper"; // Your scroll animation wrapper
 import { fadeInUp, staggerContainer } from "./animations/variants"; // Your animation variants
@@ -14,35 +14,83 @@ import aboutImage3 from "../assets/images/data-connected-africa.jpg";
 import aboutImage4 from "../assets/images/data-visualization-abstract.jpg";
 import Button from "./Button";
 import { useNavigate } from "react-router-dom";
+import emailjs from '@emailjs/browser';
 import Chip from "./Chip";
+import { FiArrowRight } from "react-icons/fi";
+import toast from "react-hot-toast";
 
 const staticTextPartVariant = fadeInUp(0.7);
 
+const SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+const TEMPLATE_ID = import.meta.env.VITE_EMAILJS_BRIEF_TEMPLATE_ID;
+const USER_ID = import.meta.env.VITE_EMAILJS_USER_ID;
+
+
 function BriefSection() {
   const navigate = useNavigate();
-  const briefList = [
+  const [email, setEmail] = useState("")
+    const [isSubmitting, setIsSubmitting] = useState(false);
+  
+
+    const validateForm = (data:string) => {
+     
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  
+   
+      if (!emailRegex.test(data)) {
+        toast.error('Please enter a valid email address.');
+        return false;
+      }
+
+      return true;
+    };
+  
+  const handleSubmit = async () => {
     
+    if (!SERVICE_ID || !TEMPLATE_ID || !USER_ID) {
+      console.error('EmailJS .env variables are not configured for contact form!');
+      toast.error('Sorry, the contact form is currently unavailable.');
+      return;
+    }
+
+    if (!validateForm(email)) return;
+
+    setIsSubmitting(true);
+    const toastId = toast.loading('Sending message...');
+
+    try {
+
+
+      await emailjs.send(SERVICE_ID, TEMPLATE_ID, {from_email: email}, USER_ID);
+      setEmail("");
+      toast.success('Message sent successfully!', { id: toastId });
+    } catch (error) {
+      console.error('EmailJS FAILED...', error);
+      toast.error('Oops! Something went wrong.', { id: toastId });
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
+  const briefList = [
     {
-      id:1,
-      text:"Policy innovation through data"
+      id: 1,
+      text: "Policy innovation through data",
     },
-        {
-      id:2,
-      text:"Responsible AI for the public good"
+    {
+      id: 2,
+      text: "Responsible AI for the public good",
     },
 
-           {
-      id:3,
-      text:"Data monetization playbooks"
+    {
+      id: 3,
+      text: "Data monetization playbooks",
     },
-               {
-      id:4,
-      text:"Talent, ethics, and inclusion in the data economy"
+    {
+      id: 4,
+      text: "Talent, ethics, and inclusion in the data economy",
     },
-  ]
-  
-
-  
+  ];
 
   return (
     <section
@@ -63,7 +111,9 @@ function BriefSection() {
             className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-data-text-main leading-tight tracking-tighter "
           >
             {/* Compose the headline */}
-            <motion.span variants={staticTextPartVariant}>The&nbsp;</motion.span>
+            <motion.span variants={staticTextPartVariant}>
+              The&nbsp;
+            </motion.span>
 
             <AnimatedHighlightedWord
               word="AYNA"
@@ -71,7 +121,9 @@ function BriefSection() {
               textColorClass="text-data-accent"
               className="mx-1"
             />
-            <motion.span variants={staticTextPartVariant}>&nbsp;Brief</motion.span>
+            <motion.span variants={staticTextPartVariant}>
+              &nbsp;Brief
+            </motion.span>
           </motion.h1>
         </AnimatedWrapper>
 
@@ -90,7 +142,7 @@ function BriefSection() {
               {/* Compose the headline */}
               <motion.span variants={staticTextPartVariant}>
                 {" "}
-                Insights That Drive <br/> Data-Led&nbsp;
+                Insights That Drive <br /> Data-Led&nbsp;
               </motion.span>
 
               <AnimatedHighlightedWord
@@ -102,16 +154,15 @@ function BriefSection() {
             </motion.h3>
 
             <p className="text-data-text-muted text-base sm:text-xl leading-relaxed mb-4">
-              Our thought leadership platform explores what&apos;s next for data,
-              governance, AI, and transformation in Africa.
-            </p> 
+              Our thought leadership platform explores what&apos;s next for
+              data, governance, AI, and transformation in Africa.
+            </p>
 
             <p className="lg:ml-4">
               <ul className="text-data-text-muted lg:list-disc text-base sm:text-xl gap-4">
                 {briefList?.map((brief, index) => (
                   <li key={index}>{brief?.text}</li>
                 ))}
-
               </ul>
             </p>
 
@@ -138,12 +189,30 @@ function BriefSection() {
                 onClick={() => navigate("/about")}
               />
             </div>
+
+            <div className="w-[80%] h-14 flex justify-between overflow-hidden border border-white rounded-full mt-7">
+              <input
+                type="text"
+                aria-label="subscribe"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                className="flex-1 bg-transparent border-none outline-none pl-6 pr-5"
+                placeholder="Your Email Address"
+              />
+
+              <div onClick={handleSubmit} className="w-[40%] text-[0.8rem] gap-1 h-full flex rounded-full cursor-pointer bg-brand-yellow group justify-center items-center text-data-dark-bg">
+                <p>Subscribe For Updates</p>
+                <FiArrowRight
+                  className={` w-4 h-4 transform  group-hover:-rotate-[50deg] ease-in-out duration-200`}
+                />
+              </div>
+            </div>
           </AnimatedWrapper>
           {/* Right Column: Floating Images Area */}
           <div className="relative h-[350px] sm:h-[450px] md:h-[550px] lg:h-[600px] order-1 lg:order-2  pointer-events-none lg:pointer-events-auto">
             {/* Note: pointer-events-none on parent can be tricky if images should be clickable later */}
             {/* Image 1 - Largest, slightly back */}
-               <FloatingImage
+            <FloatingImage
               src={aboutImage1}
               alt="Dynamic team working"
               className="w-[60%] sm:w-[55%] md:w-[280px] lg:w-[320px] top-[5%] left-[10%] lg:left-[5%] z-10"
