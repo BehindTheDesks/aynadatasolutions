@@ -253,11 +253,9 @@ function Navbar() {
               >
                 <span
                   className={`font-medium text-lg transition-colors duration-200 
-                                 ${
-                                   isScrolled || isMobileMenuOpen
-                                     ? "text-data-text-main hover:text-data-text-main"
-                                     : "text-data-text-main hover:text-gray-200"
-                                 }`}
+                                ${
+      location.pathname === `/${link.to}` ? "bg-brand-yellow p-4 text-data-dark-bg " : "text-data-text-main hover:text-brand-yellow"
+    } rounded-full`}
                 >
                   {link.name}
                 </span>
