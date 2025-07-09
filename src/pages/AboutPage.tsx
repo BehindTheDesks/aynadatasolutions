@@ -58,7 +58,7 @@ const Section1 = () => {
         variants={staggerContainer(0.25, 0.1)}
         className="text-center lg:text-left lg:h-[600px]  relative z-10 order-1 lg:order-1 "
       >
-            <motion.h1
+        <motion.h1
           variants={fadeInUp(0.7, 0)} // Delay 0 for first element in stagger
           className="text-5xl sm:text-6xl md:text-7xl font-extrabold text-data-text-main leading-tight tracking-tighter mb-14"
         >
@@ -97,7 +97,6 @@ const Section1 = () => {
             className="mx-1"
           />
         </motion.h1>
-    
 
         <motion.p
           variants={fadeInUp(0.7, 0.2)} // Staggered delay

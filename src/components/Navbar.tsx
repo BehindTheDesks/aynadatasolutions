@@ -39,6 +39,8 @@ const mainNavLinks: navType[] = [
   { name: "Home", to: "", isSection: false }, // Ensure this ID matches your Hero section's wrapper
   { name: "About Us", to: "about", isSection: false },
   { name: "Our Solutions", to: "services", isSection: false },
+  { name: "Brief", to: "brief", isSection: false },
+
 
   // { name: 'Contact', to: 'contact', isSection: false },
 ];

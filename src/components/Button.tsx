@@ -46,9 +46,9 @@ const Button: React.FC<IButtonProp> = ({
       </div>
         }
       
-      <div className={` ${circleSizeClasses[size]} rounded-full group-hover:${bgHoverColor} ${backgroundColor} ease-in-out duration-300 -ml-3 flex justify-center items-center`}>
+      {/* <div className={` ${circleSizeClasses[size]} rounded-full group-hover:${bgHoverColor} ${backgroundColor} ease-in-out duration-300 -ml-3 flex justify-center items-center`}>
         <FiArrowRight className={`${textColor} w-5 h-5 transform  group-hover:-rotate-[50deg] ease-in-out duration-200`}/>
-      </div>
+      </div> */}
     </div>
   );
 };

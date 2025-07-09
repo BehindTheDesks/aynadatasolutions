@@ -15,6 +15,7 @@ import { isProduction } from "./hooks/helper.ts";
 import NotFound from "./components/NotFound.tsx";
 import ComingSoonPage from "./pages/ComingSoonPage.tsx";
 import { Toaster } from 'react-hot-toast';
+import BriefPage from "./pages/BriefPage.tsx";
 
 const productionRoutes: RouteObject[] = [
       {
@@ -47,6 +48,10 @@ const devRoutes: RouteObject[] = [
     element: <ServicesPage />,
   },
 
+  {
+    path: "brief",
+    element: <BriefPage />,
+  },
 
 ];
 
