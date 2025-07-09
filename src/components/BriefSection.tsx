@@ -186,7 +186,7 @@ function BriefSection() {
               <Button
                 size="lg"
                 label="Visit The AYNA Brief"
-                onClick={() => navigate("/about")}
+                onClick={() => navigate("/brief")}
               />
             </div>
 

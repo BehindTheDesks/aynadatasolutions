@@ -107,6 +107,7 @@ function HeroDataAnalytics() {
                 label="Explore Our Work"
                 backgroundColor="bg-brand-yellow"
                 textColor="text-data-text-main"
+                bgHoverColor="#f9fafb"
                 onClick={() => navigate("/services")}
               />
             </motion.div>
