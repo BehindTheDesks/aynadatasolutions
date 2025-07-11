@@ -55,7 +55,9 @@ const devRoutes: RouteObject[] = [
 
 ];
 
-const subroutes = isProduction() ? productionRoutes : devRoutes;
+// const subroutes = isProduction() ? productionRoutes : devRoutes;
+const subroutes = devRoutes;
+
 
 const router = createBrowserRouter([
   {

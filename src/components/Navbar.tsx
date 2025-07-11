@@ -7,7 +7,6 @@ import logo from "../assets/images/ayna-white.png";
 
 import Button from "./Button";
 import { FiMenu, FiX } from "react-icons/fi";
-import { isProduction } from "../hooks/helper";
 
 interface navType {
   name: string;
@@ -45,7 +44,9 @@ const mainNavLinks: navType[] = [
   // { name: 'Contact', to: 'contact', isSection: false },
 ];
 
-const navLinks = isProduction() ? [] : mainNavLinks;
+// const navLinks = isProduction() ? [] : mainNavLinks;
+const navLinks = mainNavLinks;
+
 
 // Animation variants for links (optional, can be done with Tailwind hover too)
 const linkVariants = {
